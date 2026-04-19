@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-create-scan-response-structure.json",
+  "name": "CreateScanResponse",
+  "description": "CreateScanResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "resourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The identifier for the resource object that contains resources that were scanned."
+        }
+      ]
+    },
+    "runId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID that identifies the individual scan run."
+        }
+      ]
+    },
+    "scanName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanName"
+        },
+        {
+          "description": "The name of the scan."
+        }
+      ]
+    },
+    "scanNameArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanNameArn"
+        },
+        {
+          "description": "The ARN for the scan name."
+        }
+      ]
+    },
+    "scanState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanState"
+        },
+        {
+          "description": "The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourceId",
+    "runId",
+    "scanName",
+    "scanState"
+  ]
+}

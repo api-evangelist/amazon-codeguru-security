@@ -1,0 +1,184 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon CodeGuru Security
+  description: Taxonomy of Amazon CodeGuru Security APIs.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon CodeGuru Security API
+    namespace: codegurusecurity
+    version: '2018-05-10'
+    baseUrl: https://codeguru-security.us-east-1.amazonaws.com
+    status: active
+  resources:
+  - name: batchGetFindings
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id001
+    - BatchGetFindings
+  - name: scans
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id003
+    - CreateScan
+    - ListScans
+  - name: uploadUrl
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id004
+    - CreateUploadUrl
+  - name: get
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id005
+    - GetAccountConfiguration
+  - name: '{scanName}'
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id006
+    - GetFindings
+    - GetScan
+  - name: summary
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id007
+    - GetMetricsSummary
+  - name: findings
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id008
+    - ListFindingsMetrics
+  - name: '{resourceArn}'
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id009
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+  - name: updateAccountConfiguration
+    apis:
+    - Amazon CodeGuru Security API
+    actions: &id010
+    - UpdateAccountConfiguration
+  actions:
+  - name: list
+    httpMethods:
+    - GET
+    pattern: read
+  - name: create
+    httpMethods:
+    - POST
+    pattern: write
+  - name: delete
+    httpMethods:
+    - DELETE
+    pattern: destructive
+  - name: get
+    httpMethods:
+    - GET
+    pattern: read
+  - name: update
+    httpMethods:
+    - PUT
+    - PATCH
+    pattern: write
+  schemas:
+    core: []
+  parameters:
+    identifiers:
+    - id
+    - name
+    - arn
+    pagination:
+    - nextToken
+    - maxResults
+  authentication:
+    schemes:
+    - AWS Signature Version 4
+    iamIntegration: true
+capability:
+  workflows:
+  - name: Application Security Scanning
+    file: capabilities/amazon-codeguru-security-security-scanning.yaml
+    description: 'Unified workflow for security and DevOps teams to create security scans, retrieve findings, track vulnerabilities by severity, and manage remediation '
+    toolCount: 7
+    personas: &id002
+    - Security Engineer
+    - Developer
+    - DevSecOps Engineer
+    domains:
+    - Application Security Scanning
+  personas:
+  - id: security-engineer
+    name: Security Engineer
+    description: Security Engineer persona.
+    workflows:
+    - Application Security Scanning
+  - id: developer
+    name: Developer
+    description: Developer persona.
+    workflows:
+    - Application Security Scanning
+  - id: devsecops-engineer
+    name: DevSecOps Engineer
+    description: DevSecOps Engineer persona.
+    workflows:
+    - Application Security Scanning
+  domains:
+  - name: Application Security Scanning
+    description: Unified workflow for security and DevOps teams to create security scans, retrieve findings, track vu
+  namespaces:
+  - type: consumed
+    name: codegurusecurity
+    port:
+  binds:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - AWS_REGION
+crossReference:
+- resource: batchGetFindings
+  operations: *id001
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: scans
+  operations: *id003
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: uploadUrl
+  operations: *id004
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: get
+  operations: *id005
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: '{scanName}'
+  operations: *id006
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: summary
+  operations: *id007
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: findings
+  operations: *id008
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: '{resourceArn}'
+  operations: *id009
+  workflows:
+  - Application Security Scanning
+  personas: *id002
+- resource: updateAccountConfiguration
+  operations: *id010
+  workflows:
+  - Application Security Scanning
+  personas: *id002

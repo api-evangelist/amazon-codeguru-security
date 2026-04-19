@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-tag-key-schema.json",
+  "title": "TagKey",
+  "description": "TagKey schema from Amazon CodeGuru Security",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 128
+}

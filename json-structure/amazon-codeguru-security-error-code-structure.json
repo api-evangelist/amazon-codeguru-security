@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-error-code-structure.json",
+  "name": "ErrorCode",
+  "description": "ErrorCode schema from Amazon CodeGuru Security",
+  "type": "string",
+  "enum": [
+    "DUPLICATE_IDENTIFIER",
+    "ITEM_DOES_NOT_EXIST",
+    "INTERNAL_ERROR",
+    "INVALID_FINDING_ID",
+    "INVALID_SCAN_NAME"
+  ]
+}

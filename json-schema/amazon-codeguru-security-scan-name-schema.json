@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-scan-name-schema.json",
+  "title": "ScanName",
+  "description": "ScanName schema from Amazon CodeGuru Security",
+  "type": "string",
+  "pattern": "^[a-zA-Z0-9-_$:.]*$",
+  "minLength": 1,
+  "maxLength": 140
+}

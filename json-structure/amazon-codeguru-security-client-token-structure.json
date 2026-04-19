@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-client-token-structure.json",
+  "name": "ClientToken",
+  "description": "ClientToken schema from Amazon CodeGuru Security",
+  "type": "string",
+  "pattern": "^[\\S]+$",
+  "minLength": 1,
+  "maxLength": 64
+}

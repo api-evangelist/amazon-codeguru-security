@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-next-token-structure.json",
+  "name": "NextToken",
+  "description": "NextToken schema from Amazon CodeGuru Security",
+  "type": "string",
+  "pattern": "^[\\S]+$",
+  "minLength": 1,
+  "maxLength": 2048
+}

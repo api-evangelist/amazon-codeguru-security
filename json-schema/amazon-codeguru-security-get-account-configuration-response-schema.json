@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-get-account-configuration-response-schema.json",
+  "title": "GetAccountConfigurationResponse",
+  "description": "GetAccountConfigurationResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "encryptionConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionConfig"
+        },
+        {
+          "description": "An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption. By default, CodeGuru Security uses an AWS-managed key for encryption. To specify your own key, call <code>UpdateAccountConfiguration</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "encryptionConfig"
+  ]
+}

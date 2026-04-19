@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-finding-identifier-structure.json",
+  "name": "FindingIdentifier",
+  "description": "An object that contains information about a finding and the scan that generated it. ",
+  "type": "object",
+  "properties": {
+    "findingId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for a finding."
+        }
+      ]
+    },
+    "scanName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the scan that generated the finding. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "findingId",
+    "scanName"
+  ]
+}

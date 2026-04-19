@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-update-account-configuration-request-structure.json",
+  "name": "UpdateAccountConfigurationRequest",
+  "description": "UpdateAccountConfigurationRequest schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "encryptionConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionConfig"
+        },
+        {
+          "description": "The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing."
+        }
+      ]
+    }
+  },
+  "required": [
+    "encryptionConfig"
+  ]
+}

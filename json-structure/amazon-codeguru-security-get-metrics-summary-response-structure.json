@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-get-metrics-summary-response-structure.json",
+  "name": "GetMetricsSummaryResponse",
+  "description": "GetMetricsSummaryResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "metricsSummary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricsSummary"
+        },
+        {
+          "description": "The summary metrics from the specified date."
+        }
+      ]
+    }
+  }
+}

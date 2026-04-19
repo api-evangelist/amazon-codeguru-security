@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-finding-metrics-value-per-severity-schema.json",
+  "title": "FindingMetricsValuePerSeverity",
+  "description": "The severity of the issue in the code that generated a finding.",
+  "type": "object",
+  "properties": {
+    "critical": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "The severity of the finding is critical and should be addressed immediately."
+        }
+      ]
+    },
+    "high": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "The severity of the finding is high and should be addressed as a near-term priority."
+        }
+      ]
+    },
+    "info": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "The finding is related to quality or readability improvements and not considered actionable."
+        }
+      ]
+    },
+    "low": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "The severity of the finding is low and does require action on its own."
+        }
+      ]
+    },
+    "medium": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "The severity of the finding is medium and should be addressed as a mid-term priority."
+        }
+      ]
+    }
+  }
+}

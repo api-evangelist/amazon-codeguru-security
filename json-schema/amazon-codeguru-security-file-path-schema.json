@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-file-path-schema.json",
+  "title": "FilePath",
+  "description": "Information about the location of security vulnerabilities that Amazon CodeGuru Security detected in your code.",
+  "type": "object",
+  "properties": {
+    "codeSnippet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeSnippet"
+        },
+        {
+          "description": "A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code."
+        }
+      ]
+    },
+    "endLine": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The last line number of the code snippet where the security vulnerability appears in your code."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the file."
+        }
+      ]
+    },
+    "path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The path to the resource with the security vulnerability."
+        }
+      ]
+    },
+    "startLine": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The first line number of the code snippet where the security vulnerability appears in your code."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "codeArtifactId": "500123",
+  "requestHeaders": "example-value",
+  "s3Url": "https://example.amazonaws.com"
+}

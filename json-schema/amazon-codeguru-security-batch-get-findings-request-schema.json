@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-batch-get-findings-request-schema.json",
+  "title": "BatchGetFindingsRequest",
+  "description": "BatchGetFindingsRequest schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "findingIdentifiers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingIdentifiers"
+        },
+        {
+          "description": "A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "findingIdentifiers"
+  ]
+}

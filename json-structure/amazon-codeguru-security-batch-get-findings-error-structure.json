@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-batch-get-findings-error-structure.json",
+  "name": "BatchGetFindingsError",
+  "description": "Contains information about the error that caused a finding to fail to be retrieved.",
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorCode"
+        },
+        {
+          "description": "A code associated with the type of error."
+        }
+      ]
+    },
+    "findingId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The finding ID of the finding that was not fetched."
+        }
+      ]
+    },
+    "message": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Describes the error."
+        }
+      ]
+    },
+    "scanName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanName"
+        },
+        {
+          "description": "The name of the scan that generated the finding."
+        }
+      ]
+    }
+  },
+  "required": [
+    "errorCode",
+    "findingId",
+    "message",
+    "scanName"
+  ]
+}

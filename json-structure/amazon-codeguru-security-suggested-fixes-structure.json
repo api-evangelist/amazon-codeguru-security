@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-suggested-fixes-structure.json",
+  "name": "SuggestedFixes",
+  "description": "SuggestedFixes schema from Amazon CodeGuru Security",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/SuggestedFix"
+  }
+}

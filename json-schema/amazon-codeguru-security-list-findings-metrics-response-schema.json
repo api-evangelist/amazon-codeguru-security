@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-list-findings-metrics-response-schema.json",
+  "title": "ListFindingsMetricsResponse",
+  "description": "ListFindingsMetricsResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "findingsMetrics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingsMetricList"
+        },
+        {
+          "description": "A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-create-upload-url-request-structure.json",
+  "name": "CreateUploadUrlRequest",
+  "description": "CreateUploadUrlRequest schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "scanName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanName"
+        },
+        {
+          "description": "The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL."
+        }
+      ]
+    }
+  },
+  "required": [
+    "scanName"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-get-scan-response-structure.json",
+  "name": "GetScanResponse",
+  "description": "GetScanResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "analysisType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnalysisType"
+        },
+        {
+          "description": "The type of analysis CodeGuru Security performed in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings."
+        }
+      ]
+    },
+    "createdAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time the scan was created."
+        }
+      ]
+    },
+    "numberOfRevisions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of times a scan has been re-run on a revised resource."
+        }
+      ]
+    },
+    "runId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "UUID that identifies the individual scan run."
+        }
+      ]
+    },
+    "scanName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanName"
+        },
+        {
+          "description": "The name of the scan."
+        }
+      ]
+    },
+    "scanNameArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanNameArn"
+        },
+        {
+          "description": "The ARN for the scan name."
+        }
+      ]
+    },
+    "scanState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanState"
+        },
+        {
+          "description": "The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>."
+        }
+      ]
+    },
+    "updatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time when the scan was last updated. Only available for <code>STANDARD</code> scan types."
+        }
+      ]
+    }
+  },
+  "required": [
+    "analysisType",
+    "createdAt",
+    "runId",
+    "scanName",
+    "scanState"
+  ]
+}

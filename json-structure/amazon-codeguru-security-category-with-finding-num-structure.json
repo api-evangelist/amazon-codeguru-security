@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-category-with-finding-num-structure.json",
+  "name": "CategoryWithFindingNum",
+  "description": "Information about a finding category with open findings.",
+  "type": "object",
+  "properties": {
+    "categoryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the finding category. A finding category is determined by the detector that detected the finding."
+        }
+      ]
+    },
+    "findingNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The number of open findings in the category."
+        }
+      ]
+    }
+  }
+}

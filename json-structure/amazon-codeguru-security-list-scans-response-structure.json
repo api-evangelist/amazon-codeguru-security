@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-list-scans-response-structure.json",
+  "name": "ListScansResponse",
+  "description": "ListScansResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A pagination token. You can use this in future calls to <code>ListScans</code> to continue listing results after the current page."
+        }
+      ]
+    },
+    "summaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanSummaries"
+        },
+        {
+          "description": "A list of <code>ScanSummary</code> objects with information about all scans in an account."
+        }
+      ]
+    }
+  }
+}

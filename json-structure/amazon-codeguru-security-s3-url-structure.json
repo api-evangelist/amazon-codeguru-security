@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-s3-url-structure.json",
+  "name": "S3Url",
+  "description": "S3Url schema from Amazon CodeGuru Security",
+  "type": "string",
+  "minLength": 1
+}

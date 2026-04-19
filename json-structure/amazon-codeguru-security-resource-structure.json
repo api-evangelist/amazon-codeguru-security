@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-resource-structure.json",
+  "name": "Resource",
+  "description": "Information about a resource, such as an Amazon S3 bucket or AWS Lambda function, that contains a finding.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for the resource."
+        }
+      ]
+    },
+    "subResourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for a section of the resource, such as an AWS Lambda layer."
+        }
+      ]
+    }
+  }
+}

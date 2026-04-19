@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-finding-identifiers-structure.json",
+  "name": "FindingIdentifiers",
+  "description": "FindingIdentifiers schema from Amazon CodeGuru Security",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/FindingIdentifier"
+  },
+  "minItems": 1,
+  "maxItems": 25
+}

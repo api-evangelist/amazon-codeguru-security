@@ -1,16 +1,101 @@
 aid: amazon-codeguru-security
-name: Amazon Codeguru Security
-description: >-
-  Amazon Codeguru Security provides API capabilities.
+name: Amazon CodeGuru Security
+description: Amazon CodeGuru Security is a static application security testing (SAST) service that uses machine learning to detect security vulnerabilities in your code. It identifies vulnerabilities 
+  such as injection flaws, data exposure risks, and infrastructure-as-code misconfigurations, and provides actionable remediation guidance to help developers fix security issues quickly.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags: []
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/apis.yml
+tags:
+- Amazon
+- AWS
+- Security
+- SAST
+- Code Analysis
+- DevSecOps
+- Developer Tools
+url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-03-16'
+modified: '2026-04-19'
 specificationVersion: '0.19'
-apis: []
+apis:
+- aid: amazon-codeguru-security:amazon-codeguru-security-api
+  name: Amazon CodeGuru Security API
+  description: The Amazon CodeGuru Security REST API.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  baseURL: https://codeguru-security.us-east-1.amazonaws.com
+  tags:
+  - Amazon
+  - AWS
+  - Security
+  - SAST
+  - Code Analysis
+  properties:
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurusecurity/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-security-openapi-original.yaml
+common:
+- type: GettingStarted
+  url: https://docs.aws.amazon.com/codeguru/security
+- type: Pricing
+  url: https://aws.amazon.com/codegurusecurity/pricing/
+- type: Console
+  url: https://console.aws.amazon.com/codegurusecurity/
+- type: Portal
+  url: https://aws.amazon.com/codegurusecurity/
+- type: Documentation
+  url: https://docs.aws.amazon.com/codegurusecurity/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Blog
+  url: https://aws.amazon.com/blogs/devops/
+- type: SignUp
+  url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: SpectralRules
+  url: rules/amazon-codeguru-security-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-codeguru-security-vocabulary.yaml
+- type: NaftikoCapability
+  url: capabilities/amazon-codeguru-security-security-scanning.yaml
+- type: JSONLD
+  url: json-ld/amazon-codeguru-security-context.jsonld
+- type: Features
+  data:
+  - name: Static Application Security Testing
+    description: Analyze source code for security vulnerabilities without running the application using machine learning-powered SAST.
+  - name: Multi-Language Support
+    description: Detect security issues in Java, Python, JavaScript, TypeScript, C, C++, C#, Go, Ruby, and Kotlin code.
+  - name: Infrastructure-as-Code Scanning
+    description: Detect security misconfigurations in CloudFormation, Terraform, CDK, and other IaC templates.
+  - name: Severity Classification
+    description: Classify findings by severity (Critical, High, Medium, Low, Informational) to help prioritize remediation.
+  - name: Remediation Guidance
+    description: Provide detailed remediation recommendations including suggested code fixes for each identified vulnerability.
+- type: UseCases
+  data:
+  - name: DevSecOps Integration
+    description: Integrate security scanning into CI/CD pipelines to detect vulnerabilities before code reaches production.
+  - name: Security Audit and Compliance
+    description: Run security scans on existing codebases to identify and remediate vulnerabilities for compliance audits.
+  - name: IaC Security Validation
+    description: Scan infrastructure-as-code templates for security misconfigurations before provisioning cloud resources.
+- type: Integrations
+  data:
+  - name: AWS CodeBuild
+    description: Run security scans as part of CodeBuild build projects for CI/CD integration.
+  - name: GitHub Actions
+    description: Add CodeGuru Security scanning to GitHub Actions workflows.
+  - name: AWS Security Hub
+    description: Send security findings to Security Hub for centralized security management.
+  - name: Amazon S3
+    description: Store and retrieve code bundles for security scanning from S3.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

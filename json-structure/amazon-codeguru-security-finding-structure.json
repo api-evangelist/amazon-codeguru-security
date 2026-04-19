@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-finding-structure.json",
+  "name": "Finding",
+  "description": "Information about a finding that was detected in your code.",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time when the finding was created."
+        }
+      ]
+    },
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "A description of the finding."
+        }
+      ]
+    },
+    "detectorId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for the detector that detected the finding in your code. A detector is a defined rule based on industry standards and AWS best practices. "
+        }
+      ]
+    },
+    "detectorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the detector that identified the security vulnerability in your code. "
+        }
+      ]
+    },
+    "detectorTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectorTags"
+        },
+        {
+          "description": "One or more tags or categorizations that are associated with a detector. These tags are defined by type, programming language, or other classification such as maintainability or consistency."
+        }
+      ]
+    },
+    "generatorId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for the component that generated a finding such as AWSCodeGuruSecurity or AWSInspector."
+        }
+      ]
+    },
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for a finding."
+        }
+      ]
+    },
+    "remediation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Remediation"
+        },
+        {
+          "description": "An object that contains the details about how to remediate a finding."
+        }
+      ]
+    },
+    "resource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Resource"
+        },
+        {
+          "description": "The resource where Amazon CodeGuru Security detected a finding."
+        }
+      ]
+    },
+    "ruleId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The identifier for the rule that generated the finding."
+        }
+      ]
+    },
+    "severity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Severity"
+        },
+        {
+          "description": "The severity of the finding."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "description": "The status of the finding. A finding status can be open or closed. "
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The title of the finding."
+        }
+      ]
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The type of finding. "
+        }
+      ]
+    },
+    "updatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time when the finding was last updated. Findings are updated when you remediate them or when the finding code location changes. "
+        }
+      ]
+    },
+    "vulnerability": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Vulnerability"
+        },
+        {
+          "description": "An object that describes the detected security vulnerability."
+        }
+      ]
+    }
+  }
+}

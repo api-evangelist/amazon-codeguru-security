@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-remediation-schema.json",
+  "title": "Remediation",
+  "description": "Information about how to remediate a finding.",
+  "type": "object",
+  "properties": {
+    "recommendation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Recommendation"
+        },
+        {
+          "description": "An object that contains information about the recommended course of action to remediate a finding."
+        }
+      ]
+    },
+    "suggestedFixes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SuggestedFixes"
+        },
+        {
+          "description": "A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding."
+        }
+      ]
+    }
+  }
+}

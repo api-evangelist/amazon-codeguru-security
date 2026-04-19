@@ -1,0 +1,111 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon CodeGuru Security Application Security Scanning
+  description: Unified workflow for security and DevOps teams to create security scans, retrieve findings, track vulnerabilities by severity, and manage remediation using Amazon CodeGuru Security.
+  tags:
+  - Amazon
+  - AWS
+  - Security
+  - SAST
+  - Code Analysis
+  - DevSecOps
+  - Developer Tools
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - import: codegurusecurity
+    location: ./shared/codegurusecurity.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: codegurusecurity-security-scanning-api
+    description: Unified REST API for Application Security Scanning.
+    resources:
+    - path: /v1/createScan
+      name: create-scan
+      description: Create a new security scan
+    - path: /v1/getScan
+      name: get-scan
+      description: Get details about a security scan
+    - path: /v1/listScans
+      name: list-scans
+      description: List security scans
+    - path: /v1/getFindings
+      name: get-findings
+      description: Get security findings from a scan
+  - type: mcp
+    port: 9090
+    namespace: codegurusecurity-security-scanning-mcp
+    transport: http
+    description: MCP server for AI-assisted Application Security Scanning.
+    tools:
+    - name: create-scan
+      description: Create a new security scan
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurusecurity.createScan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-scan
+      description: Get details about a security scan
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurusecurity.getScan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-scans
+      description: List security scans
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurusecurity.listScans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-findings
+      description: Get security findings from a scan
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurusecurity.getFindings
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: batch-get-findings
+      description: Get details about multiple findings
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurusecurity.batchGetFindings
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-metrics-summary
+      description: Get security metrics summary
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurusecurity.getMetricsSummary
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-findings-by-account
+      description: List findings across all scans in the account
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurusecurity.listFindingsByAccount
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-code-snippet-structure.json",
+  "name": "CodeSnippet",
+  "description": "CodeSnippet schema from Amazon CodeGuru Security",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/CodeLine"
+  }
+}

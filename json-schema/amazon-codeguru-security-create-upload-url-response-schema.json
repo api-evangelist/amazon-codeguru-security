@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-create-upload-url-response-schema.json",
+  "title": "CreateUploadUrlResponse",
+  "description": "CreateUploadUrlResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "codeArtifactId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The identifier for the uploaded code resource. "
+        }
+      ]
+    },
+    "requestHeaders": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestHeaderMap"
+        },
+        {
+          "description": "A set of key-value pairs that contain the required headers when uploading your resource."
+        }
+      ]
+    },
+    "s3Url": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Url"
+        },
+        {
+          "description": "A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client."
+        }
+      ]
+    }
+  },
+  "required": [
+    "codeArtifactId",
+    "requestHeaders",
+    "s3Url"
+  ]
+}

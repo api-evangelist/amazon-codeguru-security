@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-status-structure.json",
+  "name": "Status",
+  "description": "Status schema from Amazon CodeGuru Security",
+  "type": "string",
+  "enum": [
+    "Closed",
+    "Open",
+    "All"
+  ]
+}

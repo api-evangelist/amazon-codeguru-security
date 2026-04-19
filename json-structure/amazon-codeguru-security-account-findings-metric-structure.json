@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-account-findings-metric-structure.json",
+  "name": "AccountFindingsMetric",
+  "description": "A summary of findings metrics in an account.",
+  "type": "object",
+  "properties": {
+    "closedFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingMetricsValuePerSeverity"
+        },
+        {
+          "description": "The number of closed findings of each severity in an account on the specified date."
+        }
+      ]
+    },
+    "date": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date from which the finding metrics were retrieved."
+        }
+      ]
+    },
+    "meanTimeToClose": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingMetricsValuePerSeverity"
+        },
+        {
+          "description": "The average time it takes to close findings of each severity in days."
+        }
+      ]
+    },
+    "newFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingMetricsValuePerSeverity"
+        },
+        {
+          "description": "The number of new findings of each severity in account on the specified date."
+        }
+      ]
+    },
+    "openFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingMetricsValuePerSeverity"
+        },
+        {
+          "description": "The number of open findings of each severity in an account as of the specified date."
+        }
+      ]
+    }
+  }
+}

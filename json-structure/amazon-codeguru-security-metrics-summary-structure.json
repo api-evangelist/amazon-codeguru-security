@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-metrics-summary-structure.json",
+  "name": "MetricsSummary",
+  "description": "Information about summary metrics in an account.",
+  "type": "object",
+  "properties": {
+    "categoriesWithMostFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CategoriesWithMostFindings"
+        },
+        {
+          "description": "A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account."
+        }
+      ]
+    },
+    "date": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date from which the metrics summary information was retrieved."
+        }
+      ]
+    },
+    "openFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingMetricsValuePerSeverity"
+        },
+        {
+          "description": "The number of open findings of each severity in an account."
+        }
+      ]
+    },
+    "scansWithMostOpenCriticalFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScansWithMostOpenCriticalFindings"
+        },
+        {
+          "description": "A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account."
+        }
+      ]
+    },
+    "scansWithMostOpenFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScansWithMostOpenFindings"
+        },
+        {
+          "description": "A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account."
+        }
+      ]
+    }
+  }
+}

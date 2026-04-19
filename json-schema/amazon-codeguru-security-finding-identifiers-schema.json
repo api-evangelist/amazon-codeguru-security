@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-finding-identifiers-schema.json",
+  "title": "FindingIdentifiers",
+  "description": "FindingIdentifiers schema from Amazon CodeGuru Security",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/FindingIdentifier"
+  },
+  "minItems": 1,
+  "maxItems": 25
+}

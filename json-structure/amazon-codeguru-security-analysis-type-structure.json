@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-analysis-type-structure.json",
+  "name": "AnalysisType",
+  "description": "AnalysisType schema from Amazon CodeGuru Security",
+  "type": "string",
+  "enum": [
+    "Security",
+    "All"
+  ]
+}

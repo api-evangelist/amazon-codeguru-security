@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-encryption-config-schema.json",
+  "title": "EncryptionConfig",
+  "description": "Information about account-level configuration.",
+  "type": "object",
+  "properties": {
+    "kmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KmsKeyArn"
+        },
+        {
+          "description": "The KMS key ARN to use for encryption. This must be provided as a header when uploading your code resource."
+        }
+      ]
+    }
+  }
+}

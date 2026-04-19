@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-resource-id-structure.json",
+  "name": "ResourceId",
+  "description": "The identifier for a resource object that contains resources where a finding was detected.",
+  "type": "object",
+  "properties": {
+    "codeArtifactId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Uuid"
+        },
+        {
+          "description": "The identifier for the code file uploaded to the resource where a finding was detected."
+        }
+      ]
+    }
+  }
+}

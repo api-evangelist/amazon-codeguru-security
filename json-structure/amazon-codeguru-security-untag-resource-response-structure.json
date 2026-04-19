@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-untag-resource-response-structure.json",
+  "name": "UntagResourceResponse",
+  "description": "UntagResourceResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {}
+}

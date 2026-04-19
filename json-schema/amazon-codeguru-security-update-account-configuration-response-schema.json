@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-schema/amazon-codeguru-security-update-account-configuration-response-schema.json",
+  "title": "UpdateAccountConfigurationResponse",
+  "description": "UpdateAccountConfigurationResponse schema from Amazon CodeGuru Security",
+  "type": "object",
+  "properties": {
+    "encryptionConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionConfig"
+        },
+        {
+          "description": "An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption."
+        }
+      ]
+    }
+  },
+  "required": [
+    "encryptionConfig"
+  ]
+}

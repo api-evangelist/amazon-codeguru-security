@@ -1,0 +1,338 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amazon-code-guru-security": "https://amazon-code-guru-security.amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "BatchGetFindingsResponse": "amazon-code-guru-security:BatchGetFindingsResponse",
+    "FindingIdentifier": "amazon-code-guru-security:FindingIdentifier",
+    "CreateScanResponse": "amazon-code-guru-security:CreateScanResponse",
+    "CreateUploadUrlResponse": "amazon-code-guru-security:CreateUploadUrlResponse",
+    "GetAccountConfigurationResponse": "amazon-code-guru-security:GetAccountConfigurationResponse",
+    "GetFindingsResponse": "amazon-code-guru-security:GetFindingsResponse",
+    "GetMetricsSummaryResponse": "amazon-code-guru-security:GetMetricsSummaryResponse",
+    "GetScanResponse": "amazon-code-guru-security:GetScanResponse",
+    "ListFindingsMetricsResponse": "amazon-code-guru-security:ListFindingsMetricsResponse",
+    "ListScansResponse": "amazon-code-guru-security:ListScansResponse",
+    "ListTagsForResourceResponse": "amazon-code-guru-security:ListTagsForResourceResponse",
+    "TagResourceResponse": "amazon-code-guru-security:TagResourceResponse",
+    "UntagResourceResponse": "amazon-code-guru-security:UntagResourceResponse",
+    "UpdateAccountConfigurationResponse": "amazon-code-guru-security:UpdateAccountConfigurationResponse",
+    "FindingMetricsValuePerSeverity": "amazon-code-guru-security:FindingMetricsValuePerSeverity",
+    "AccountFindingsMetric": "amazon-code-guru-security:AccountFindingsMetric",
+    "BatchGetFindingsError": "amazon-code-guru-security:BatchGetFindingsError",
+    "BatchGetFindingsRequest": "amazon-code-guru-security:BatchGetFindingsRequest",
+    "CategoryWithFindingNum": "amazon-code-guru-security:CategoryWithFindingNum",
+    "CodeLine": "amazon-code-guru-security:CodeLine",
+    "ResourceId": "amazon-code-guru-security:ResourceId",
+    "TagMap": "amazon-code-guru-security:TagMap",
+    "CreateScanRequest": "amazon-code-guru-security:CreateScanRequest",
+    "CreateUploadUrlRequest": "amazon-code-guru-security:CreateUploadUrlRequest",
+    "RequestHeaderMap": "amazon-code-guru-security:RequestHeaderMap",
+    "EncryptionConfig": "amazon-code-guru-security:EncryptionConfig",
+    "FilePath": "amazon-code-guru-security:FilePath",
+    "Remediation": "amazon-code-guru-security:Remediation",
+    "Resource": "amazon-code-guru-security:Resource",
+    "Vulnerability": "amazon-code-guru-security:Vulnerability",
+    "Finding": "amazon-code-guru-security:Finding",
+    "GetAccountConfigurationRequest": "amazon-code-guru-security:GetAccountConfigurationRequest",
+    "GetFindingsRequest": "amazon-code-guru-security:GetFindingsRequest",
+    "GetMetricsSummaryRequest": "amazon-code-guru-security:GetMetricsSummaryRequest",
+    "MetricsSummary": "amazon-code-guru-security:MetricsSummary",
+    "GetScanRequest": "amazon-code-guru-security:GetScanRequest",
+    "ListFindingsMetricsRequest": "amazon-code-guru-security:ListFindingsMetricsRequest",
+    "ListScansRequest": "amazon-code-guru-security:ListScansRequest",
+    "ListTagsForResourceRequest": "amazon-code-guru-security:ListTagsForResourceRequest",
+    "Recommendation": "amazon-code-guru-security:Recommendation",
+    "ScanNameWithFindingNum": "amazon-code-guru-security:ScanNameWithFindingNum",
+    "ScanSummary": "amazon-code-guru-security:ScanSummary",
+    "SuggestedFix": "amazon-code-guru-security:SuggestedFix",
+    "TagResourceRequest": "amazon-code-guru-security:TagResourceRequest",
+    "UntagResourceRequest": "amazon-code-guru-security:UntagResourceRequest",
+    "UpdateAccountConfigurationRequest": "amazon-code-guru-security:UpdateAccountConfigurationRequest",
+    "failedFindings": {
+      "@id": "amazon-code-guru-security:failedFindings",
+      "@type": "xsd:string"
+    },
+    "findings": {
+      "@id": "amazon-code-guru-security:findings",
+      "@type": "xsd:string"
+    },
+    "findingId": {
+      "@id": "amazon-code-guru-security:findingId",
+      "@type": "xsd:string"
+    },
+    "scanName": {
+      "@id": "amazon-code-guru-security:scanName",
+      "@type": "xsd:string"
+    },
+    "resourceId": {
+      "@id": "amazon-code-guru-security:resourceId",
+      "@type": "xsd:string"
+    },
+    "runId": {
+      "@id": "amazon-code-guru-security:runId",
+      "@type": "xsd:string"
+    },
+    "scanNameArn": {
+      "@id": "amazon-code-guru-security:scanNameArn",
+      "@type": "xsd:string"
+    },
+    "scanState": {
+      "@id": "amazon-code-guru-security:scanState",
+      "@type": "xsd:string"
+    },
+    "codeArtifactId": {
+      "@id": "amazon-code-guru-security:codeArtifactId",
+      "@type": "xsd:string"
+    },
+    "requestHeaders": {
+      "@id": "amazon-code-guru-security:requestHeaders",
+      "@type": "xsd:string"
+    },
+    "s3Url": {
+      "@id": "amazon-code-guru-security:s3Url",
+      "@type": "xsd:string"
+    },
+    "encryptionConfig": {
+      "@id": "amazon-code-guru-security:encryptionConfig",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "amazon-code-guru-security:nextToken",
+      "@type": "xsd:string"
+    },
+    "metricsSummary": {
+      "@id": "amazon-code-guru-security:metricsSummary",
+      "@type": "xsd:string"
+    },
+    "analysisType": {
+      "@id": "amazon-code-guru-security:analysisType",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "amazon-code-guru-security:createdAt",
+      "@type": "xsd:string"
+    },
+    "numberOfRevisions": {
+      "@id": "amazon-code-guru-security:numberOfRevisions",
+      "@type": "xsd:string"
+    },
+    "updatedAt": {
+      "@id": "amazon-code-guru-security:updatedAt",
+      "@type": "xsd:string"
+    },
+    "findingsMetrics": {
+      "@id": "amazon-code-guru-security:findingsMetrics",
+      "@type": "xsd:string"
+    },
+    "summaries": {
+      "@id": "amazon-code-guru-security:summaries",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "amazon-code-guru-security:tags",
+      "@type": "xsd:string"
+    },
+    "critical": {
+      "@id": "amazon-code-guru-security:critical",
+      "@type": "xsd:string"
+    },
+    "high": {
+      "@id": "amazon-code-guru-security:high",
+      "@type": "xsd:string"
+    },
+    "info": {
+      "@id": "amazon-code-guru-security:info",
+      "@type": "xsd:string"
+    },
+    "low": {
+      "@id": "amazon-code-guru-security:low",
+      "@type": "xsd:string"
+    },
+    "medium": {
+      "@id": "amazon-code-guru-security:medium",
+      "@type": "xsd:string"
+    },
+    "closedFindings": {
+      "@id": "amazon-code-guru-security:closedFindings",
+      "@type": "xsd:string"
+    },
+    "date": {
+      "@id": "amazon-code-guru-security:date",
+      "@type": "xsd:string"
+    },
+    "meanTimeToClose": {
+      "@id": "amazon-code-guru-security:meanTimeToClose",
+      "@type": "xsd:string"
+    },
+    "newFindings": {
+      "@id": "amazon-code-guru-security:newFindings",
+      "@type": "xsd:string"
+    },
+    "openFindings": {
+      "@id": "amazon-code-guru-security:openFindings",
+      "@type": "xsd:string"
+    },
+    "errorCode": {
+      "@id": "amazon-code-guru-security:errorCode",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "amazon-code-guru-security:message",
+      "@type": "xsd:string"
+    },
+    "findingIdentifiers": {
+      "@id": "amazon-code-guru-security:findingIdentifiers",
+      "@type": "xsd:string"
+    },
+    "categoryName": {
+      "@id": "amazon-code-guru-security:categoryName",
+      "@type": "xsd:string"
+    },
+    "findingNumber": {
+      "@id": "amazon-code-guru-security:findingNumber",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "amazon-code-guru-security:content",
+      "@type": "xsd:string"
+    },
+    "number": {
+      "@id": "amazon-code-guru-security:number",
+      "@type": "xsd:string"
+    },
+    "clientToken": {
+      "@id": "amazon-code-guru-security:clientToken",
+      "@type": "xsd:string"
+    },
+    "scanType": {
+      "@id": "amazon-code-guru-security:scanType",
+      "@type": "xsd:string"
+    },
+    "kmsKeyArn": {
+      "@id": "amazon-code-guru-security:kmsKeyArn",
+      "@type": "xsd:string"
+    },
+    "codeSnippet": {
+      "@id": "amazon-code-guru-security:codeSnippet",
+      "@type": "xsd:string"
+    },
+    "endLine": {
+      "@id": "amazon-code-guru-security:endLine",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "path": {
+      "@id": "amazon-code-guru-security:path",
+      "@type": "xsd:string"
+    },
+    "startLine": {
+      "@id": "amazon-code-guru-security:startLine",
+      "@type": "xsd:string"
+    },
+    "recommendation": {
+      "@id": "amazon-code-guru-security:recommendation",
+      "@type": "xsd:string"
+    },
+    "suggestedFixes": {
+      "@id": "amazon-code-guru-security:suggestedFixes",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "amazon-code-guru-security:id",
+      "@type": "xsd:string"
+    },
+    "subResourceId": {
+      "@id": "amazon-code-guru-security:subResourceId",
+      "@type": "xsd:string"
+    },
+    "filePath": {
+      "@id": "amazon-code-guru-security:filePath",
+      "@type": "xsd:string"
+    },
+    "itemCount": {
+      "@id": "amazon-code-guru-security:itemCount",
+      "@type": "xsd:string"
+    },
+    "referenceUrls": {
+      "@id": "amazon-code-guru-security:referenceUrls",
+      "@type": "xsd:string"
+    },
+    "relatedVulnerabilities": {
+      "@id": "amazon-code-guru-security:relatedVulnerabilities",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "detectorId": {
+      "@id": "amazon-code-guru-security:detectorId",
+      "@type": "xsd:string"
+    },
+    "detectorName": {
+      "@id": "amazon-code-guru-security:detectorName",
+      "@type": "xsd:string"
+    },
+    "detectorTags": {
+      "@id": "amazon-code-guru-security:detectorTags",
+      "@type": "xsd:string"
+    },
+    "generatorId": {
+      "@id": "amazon-code-guru-security:generatorId",
+      "@type": "xsd:string"
+    },
+    "remediation": {
+      "@id": "amazon-code-guru-security:remediation",
+      "@type": "xsd:string"
+    },
+    "resource": {
+      "@id": "amazon-code-guru-security:resource",
+      "@type": "xsd:string"
+    },
+    "ruleId": {
+      "@id": "amazon-code-guru-security:ruleId",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "amazon-code-guru-security:severity",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "amazon-code-guru-security:status",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "amazon-code-guru-security:title",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amazon-code-guru-security:type",
+      "@type": "xsd:string"
+    },
+    "vulnerability": {
+      "@id": "amazon-code-guru-security:vulnerability",
+      "@type": "xsd:string"
+    },
+    "categoriesWithMostFindings": {
+      "@id": "amazon-code-guru-security:categoriesWithMostFindings",
+      "@type": "xsd:string"
+    },
+    "scansWithMostOpenCriticalFindings": {
+      "@id": "amazon-code-guru-security:scansWithMostOpenCriticalFindings",
+      "@type": "xsd:string"
+    },
+    "scansWithMostOpenFindings": {
+      "@id": "amazon-code-guru-security:scansWithMostOpenFindings",
+      "@type": "xsd:string"
+    },
+    "text": {
+      "@id": "amazon-code-guru-security:text",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "code": {
+      "@id": "amazon-code-guru-security:code",
+      "@type": "xsd:string"
+    }
+  }
+}

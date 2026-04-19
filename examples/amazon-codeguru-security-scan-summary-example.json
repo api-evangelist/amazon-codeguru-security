@@ -1,0 +1,8 @@
+{
+  "createdAt": "example-value",
+  "runId": "500123",
+  "scanName": "example-resource",
+  "scanNameArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "scanState": "example-value",
+  "updatedAt": "example-value"
+}

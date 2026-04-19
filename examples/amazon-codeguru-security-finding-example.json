@@ -1,0 +1,10 @@
+{
+  "createdAt": "example-value",
+  "description": "Example description",
+  "detectorId": "500123",
+  "detectorName": "example-resource",
+  "detectorTags": "example-value",
+  "generatorId": "500123",
+  "id": "500123",
+  "remediation": "example-value"
+}

@@ -1,0 +1,8 @@
+{
+  "analysisType": "STANDARD",
+  "clientToken": "example-value",
+  "resourceId": "500123",
+  "scanName": "example-resource",
+  "scanType": "STANDARD",
+  "tags": "example-value"
+}

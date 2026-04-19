@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-header-value-structure.json",
+  "name": "HeaderValue",
+  "description": "HeaderValue schema from Amazon CodeGuru Security",
+  "type": "string",
+  "minLength": 1
+}

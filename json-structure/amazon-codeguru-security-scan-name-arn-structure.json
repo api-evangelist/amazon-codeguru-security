@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/json-structure/amazon-codeguru-security-scan-name-arn-structure.json",
+  "name": "ScanNameArn",
+  "description": "ScanNameArn schema from Amazon CodeGuru Security",
+  "type": "string",
+  "pattern": "^arn:aws:codeguru-security:[\\S]+:[\\d]{12}:scans\\/[a-zA-Z0-9-_$:.]*$",
+  "minLength": 1,
+  "maxLength": 300
+}
