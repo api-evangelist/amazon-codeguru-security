@@ -1,0 +1,26 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/amazon-codeguru-security-openapi-original.yaml + AWS public documentation
+versioning:
+  scheme: aws-api-version
+  current: '2018-05-10'
+  docs: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  notes: >-
+    AWS services are date-versioned at the service-model level rather than via a
+    URI path version; SDK clients pin the '2018-05-10' CodeGuru Security API version.
+deprecation:
+  policy_url: https://docs.aws.amazon.com/general/latest/gr/aws-sdk-releases.html
+  sunset_header: false
+  deprecation_header: false
+  notes: >-
+    CodeGuru Security does not emit RFC 8594 Sunset/Deprecation headers; lifecycle
+    changes are communicated through AWS SDK release notes and service announcements.
+sla:
+  url: https://aws.amazon.com/service-terms/
+  uptime_target: null
+  notes: No standalone published SLA for CodeGuru Security was found; the AWS Service Terms apply.
+status_page: https://health.aws.amazon.com/health/status
+maturity: >-
+  The OpenAPI info description marks the API as a preview release subject to change;
+  confirm current general-availability status in the AWS documentation.
+deprecated_operations: []

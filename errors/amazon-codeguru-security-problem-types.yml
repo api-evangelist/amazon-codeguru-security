@@ -1,0 +1,104 @@
+generated: '2026-06-20'
+method: derived
+format: aws-json
+source: openapi/amazon-codeguru-security-openapi-original.yaml
+notes: >-
+  CodeGuru Security returns AWS JSON error shapes (an exception name plus a message),
+  not RFC 9457 application/problem+json. The OpenAPI uses synthetic 480-485 status
+  codes to disambiguate the distinct exceptions per operation; the canonical HTTP
+  status each maps to is given below. remediation text is derived from the AWS API
+  error reference conventions for these standard exception types.
+problems:
+  - name: ValidationException
+    http_status: 400
+    title: The input fails to satisfy the constraints specified by the service
+    remediation: Check request parameters against the documented patterns, lengths, and enums, then retry.
+    operations:
+      - BatchGetFindings
+      - CreateScan
+      - ListScans
+      - CreateUploadUrl
+      - GetAccountConfiguration
+      - GetFindings
+      - GetMetricsSummary
+      - ListFindingsMetrics
+      - ListTagsForResource
+      - TagResource
+      - UntagResource
+      - UpdateAccountConfiguration
+  - name: AccessDeniedException
+    http_status: 403
+    title: You do not have sufficient access to perform this action
+    remediation: Verify the IAM identity has the required codeguru-security permissions and resource policies.
+    operations:
+      - BatchGetFindings
+      - CreateScan
+      - ListScans
+      - CreateUploadUrl
+      - GetAccountConfiguration
+      - GetFindings
+      - GetMetricsSummary
+      - GetScan
+      - ListFindingsMetrics
+      - ListTagsForResource
+      - TagResource
+      - UntagResource
+      - UpdateAccountConfiguration
+  - name: ResourceNotFoundException
+    http_status: 404
+    title: The requested resource could not be found
+    remediation: Confirm the scanName, resourceArn, or runId exists and is in the current account and region.
+    operations:
+      - CreateScan
+      - GetFindings
+      - GetScan
+      - ListTagsForResource
+      - TagResource
+      - UntagResource
+      - UpdateAccountConfiguration
+  - name: ConflictException
+    http_status: 409
+    title: The requested operation would cause a conflict with the current state of a resource
+    remediation: Resolve the conflicting resource state (e.g. concurrent scan) and retry.
+    operations:
+      - CreateScan
+      - GetFindings
+      - ListTagsForResource
+      - TagResource
+      - UntagResource
+  - name: ThrottlingException
+    http_status: 429
+    title: The request was denied due to request throttling
+    remediation: Back off and retry with exponential backoff and jitter.
+    operations:
+      - BatchGetFindings
+      - CreateScan
+      - ListScans
+      - CreateUploadUrl
+      - GetAccountConfiguration
+      - GetFindings
+      - GetMetricsSummary
+      - GetScan
+      - ListFindingsMetrics
+      - ListTagsForResource
+      - TagResource
+      - UntagResource
+      - UpdateAccountConfiguration
+  - name: InternalServerException
+    http_status: 500
+    title: The server encountered an internal error while processing the request
+    remediation: Retry the request; if the error persists, contact AWS Support.
+    operations:
+      - BatchGetFindings
+      - CreateScan
+      - ListScans
+      - CreateUploadUrl
+      - GetAccountConfiguration
+      - GetFindings
+      - GetMetricsSummary
+      - GetScan
+      - ListFindingsMetrics
+      - ListTagsForResource
+      - TagResource
+      - UntagResource
+      - UpdateAccountConfiguration

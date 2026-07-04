@@ -1,0 +1,46 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amazon CodeGuru Security
+  version: 1.0.0
+extends: openapi/amazon-codeguru-security-openapi-original.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-slug: amazon-codeguru-security
+      x-apievangelist-provider: Amazon Web Services
+      x-apievangelist-category: Security
+      x-apievangelist-tags:
+        - SAST
+        - Code Analysis
+        - DevSecOps
+        - Developer Tools
+      x-authentication: AWS Signature Version 4 (SigV4)
+      x-conformance:
+        - aws-sigv4
+        - pagination-token
+        - idempotency-client-token
+  - target: $.paths['/scans'].post
+    update:
+      x-apievangelist-idempotent: true
+      x-apievangelist-idempotency-key: clientToken
+  - target: $.paths['/uploadUrl'].post
+    update:
+      x-apievangelist-note: Returns a pre-signed S3 URL; upload the code artifact before calling CreateScan.
+  - target: $.paths['/scans'].get
+    update:
+      x-apievangelist-paginated: true
+      x-apievangelist-pagination-params:
+        - maxResults
+        - nextToken
+  - target: $.paths['/findings/{scanName}'].get
+    update:
+      x-apievangelist-paginated: true
+      x-apievangelist-pagination-params:
+        - maxResults
+        - nextToken
+  - target: $.paths['/metrics/findings#endDate&startDate'].get
+    update:
+      x-apievangelist-paginated: true
+      x-apievangelist-pagination-params:
+        - maxResults
+        - nextToken

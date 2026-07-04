@@ -14,7 +14,7 @@ tags:
 - Developer Tools
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-codeguru-security:amazon-codeguru-security-api
@@ -35,6 +35,10 @@ apis:
     url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
   - type: OpenAPI
     url: openapi/amazon-codeguru-security-openapi-original.yaml
+  - type: Packages
+    url: packages/amazon-codeguru-security-packages.yml
+  - type: Overlay
+    url: overlays/amazon-codeguru-security-openapi-overlay.yaml
 common:
 - type: GettingStarted
   url: https://docs.aws.amazon.com/codeguru/security
@@ -66,6 +70,18 @@ common:
   url: capabilities/amazon-codeguru-security-security-scanning.yaml
 - type: JSONLD
   url: json-ld/amazon-codeguru-security-context.jsonld
+- type: WellKnown
+  url: well-known/amazon-codeguru-security-well-known.yml
+- type: MCPServer
+  url: mcp/amazon-codeguru-security-mcp.yml
+- type: LLMsTxt
+  url: llms/amazon-codeguru-security-llms.txt
+- type: Conformance
+  url: conformance/amazon-codeguru-security-conformance.yml
+- type: ErrorCatalog
+  url: errors/amazon-codeguru-security-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/amazon-codeguru-security-lifecycle.yml
 - type: Features
   data:
   - name: Static Application Security Testing

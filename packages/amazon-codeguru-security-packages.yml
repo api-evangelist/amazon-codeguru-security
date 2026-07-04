@@ -1,0 +1,58 @@
+generated: '2026-06-20'
+method: searched
+source: public package registries (npm, PyPI, Maven Central, NuGet, RubyGems, pkg.go.dev)
+packages:
+  - language: javascript
+    registry: npm
+    name: "@aws-sdk/client-codeguru-security"
+    version: 3.1079.0
+    url: https://www.npmjs.com/package/@aws-sdk/client-codeguru-security
+    install: npm install @aws-sdk/client-codeguru-security
+    official: true
+    notes: AWS SDK for JavaScript v3 dedicated CodeGuru Security client.
+  - language: python
+    registry: pypi
+    name: boto3
+    version: 1.43.40
+    url: https://pypi.org/project/boto3/
+    install: pip install boto3
+    official: true
+    notes: Official AWS SDK for Python; access via boto3.client('codeguru-security').
+  - language: python
+    registry: pypi
+    name: botocore
+    url: https://pypi.org/project/botocore/
+    install: pip install botocore
+    official: true
+    notes: Low-level core that boto3 builds on; carries the codeguru-security service model.
+  - language: java
+    registry: maven
+    name: software.amazon.awssdk:codegurusecurity
+    version: 2.46.7
+    url: https://central.sonatype.com/artifact/software.amazon.awssdk/codegurusecurity
+    install: 'implementation("software.amazon.awssdk:codegurusecurity:2.46.7")'
+    official: true
+    notes: AWS SDK for Java 2.x dedicated CodeGuru Security module.
+  - language: csharp
+    registry: nuget
+    name: AWSSDK.CodeGuruSecurity
+    version: 4.0.100.2
+    url: https://www.nuget.org/packages/AWSSDK.CodeGuruSecurity
+    install: dotnet add package AWSSDK.CodeGuruSecurity
+    official: true
+    notes: AWS SDK for .NET dedicated CodeGuru Security package.
+  - language: ruby
+    registry: rubygems
+    name: aws-sdk-codegurusecurity
+    version: 1.46.0
+    url: https://rubygems.org/gems/aws-sdk-codegurusecurity
+    install: gem install aws-sdk-codegurusecurity
+    official: true
+    notes: AWS SDK for Ruby dedicated CodeGuru Security gem.
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/aws/aws-sdk-go-v2/service/codegurusecurity
+    url: https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/codegurusecurity
+    install: go get github.com/aws/aws-sdk-go-v2/service/codegurusecurity
+    official: true
+    notes: AWS SDK for Go v2 dedicated CodeGuru Security service package.
