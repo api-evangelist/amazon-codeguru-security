@@ -40,6 +40,14 @@ apis:
   - type: Overlay
     url: overlays/amazon-codeguru-security-openapi-overlay.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-codeguru-security-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-codeguru-security-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-codeguru-security-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-codeguru-security-authentication.yml
 - type: GettingStarted
   url: https://docs.aws.amazon.com/codeguru/security
 - type: Pricing
