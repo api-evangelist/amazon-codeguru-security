@@ -40,6 +40,8 @@ apis:
   - type: Overlay
     url: overlays/amazon-codeguru-security-openapi-overlay.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-codeguru-security-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-codeguru-security-trust-center.yml
 - type: VulnerabilityDisclosure
