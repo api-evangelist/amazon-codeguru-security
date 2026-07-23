@@ -1,0 +1,519 @@
+openapi: 3.0.0
+info:
+  version: '2018-05-10'
+  x-release: v4
+  title: Amazon CodeGuru Security AccountConfiguration Metrics API
+  description: <note> <p>Amazon CodeGuru Security is in preview release and is subject to change.</p> </note> <p>This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.</p> <p>By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html">Amazon CodeGuru Security User Guide</a>. </p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: codeguru-security
+  x-aws-signingName: codeguru-security
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codeguru-security-2018-05-10.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://codeguru-security.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon CodeGuru Security multi-region endpoint
+- url: https://codeguru-security.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Amazon CodeGuru Security multi-region endpoint
+- url: http://codeguru-security.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon CodeGuru Security endpoint for China (Beijing) and China (Ningxia)
+- url: https://codeguru-security.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Amazon CodeGuru Security endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Metrics
+paths:
+  /metrics/summary#date:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetMetricsSummary
+      description: 'Returns top level metrics about an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMetricsSummaryResponse'
+              examples:
+                GetMetricsSummary200Example:
+                  summary: Default GetMetricsSummary 200 response
+                  x-microcks-default: true
+                  value:
+                    metricsSummary: example-value
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                GetMetricsSummary480Example:
+                  summary: Default GetMetricsSummary 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                GetMetricsSummary481Example:
+                  summary: Default GetMetricsSummary 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                GetMetricsSummary482Example:
+                  summary: Default GetMetricsSummary 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                GetMetricsSummary483Example:
+                  summary: Default GetMetricsSummary 483 response
+                  x-microcks-default: true
+                  value: example-value
+      parameters:
+      - name: date
+        in: query
+        required: true
+        description: The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.
+        schema:
+          type: string
+          format: date-time
+      summary: Amazon CodeGuru Security Get Metrics Summary
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Metrics
+  /metrics/findings#endDate&startDate:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListFindingsMetrics
+      description: Returns metrics about all findings in an account within a specified time range.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFindingsMetricsResponse'
+              examples:
+                ListFindingsMetrics200Example:
+                  summary: Default ListFindingsMetrics 200 response
+                  x-microcks-default: true
+                  value:
+                    findingsMetrics: example-value
+                    nextToken: example-value
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                ListFindingsMetrics480Example:
+                  summary: Default ListFindingsMetrics 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                ListFindingsMetrics481Example:
+                  summary: Default ListFindingsMetrics 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListFindingsMetrics482Example:
+                  summary: Default ListFindingsMetrics 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                ListFindingsMetrics483Example:
+                  summary: Default ListFindingsMetrics 483 response
+                  x-microcks-default: true
+                  value: example-value
+      parameters:
+      - name: endDate
+        in: query
+        required: true
+        description: The end date of the interval which you want to retrieve metrics from.
+        schema:
+          type: string
+          format: date-time
+      - name: maxResults
+        in: query
+        required: false
+        description: The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000
+      - name: nextToken
+        in: query
+        required: false
+        description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.
+        schema:
+          type: string
+          pattern: ^[\S]+$
+          minLength: 1
+          maxLength: 2048
+      - name: startDate
+        in: query
+        required: true
+        description: The start date of the interval which you want to retrieve metrics from.
+        schema:
+          type: string
+          format: date-time
+      summary: Amazon CodeGuru Security List Findings Metrics
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Metrics
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    Timestamp:
+      type: string
+      format: date-time
+    FindingMetricsValuePerSeverity:
+      type: object
+      properties:
+        critical:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is critical and should be addressed immediately.
+        high:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is high and should be addressed as a near-term priority.
+        info:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The finding is related to quality or readability improvements and not considered actionable.
+        low:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is low and does require action on its own.
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is medium and should be addressed as a mid-term priority.
+      description: The severity of the issue in the code that generated a finding.
+    ScansWithMostOpenCriticalFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScanNameWithFindingNum'
+      minItems: 0
+      maxItems: 3
+    NextToken:
+      type: string
+      pattern: ^[\S]+$
+      minLength: 1
+      maxLength: 2048
+    ScansWithMostOpenFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScanNameWithFindingNum'
+      minItems: 0
+      maxItems: 3
+    FindingsMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccountFindingsMetric'
+    CategoryWithFindingNum:
+      type: object
+      properties:
+        categoryName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the finding category. A finding category is determined by the detector that detected the finding.
+        findingNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of open findings in the category.
+      description: Information about a finding category with open findings.
+    AccountFindingsMetric:
+      type: object
+      properties:
+        closedFindings:
+          allOf:
+          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
+          - description: The number of closed findings of each severity in an account on the specified date.
+        date:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date from which the finding metrics were retrieved.
+        meanTimeToClose:
+          allOf:
+          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
+          - description: The average time it takes to close findings of each severity in days.
+        newFindings:
+          allOf:
+          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
+          - description: The number of new findings of each severity in account on the specified date.
+        openFindings:
+          allOf:
+          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
+          - description: The number of open findings of each severity in an account as of the specified date.
+      description: A summary of findings metrics in an account.
+    Double:
+      type: number
+      format: double
+    Integer:
+      type: integer
+    GetMetricsSummaryResponse:
+      type: object
+      properties:
+        metricsSummary:
+          allOf:
+          - $ref: '#/components/schemas/MetricsSummary'
+          - description: The summary metrics from the specified date.
+    MetricsSummary:
+      type: object
+      properties:
+        categoriesWithMostFindings:
+          allOf:
+          - $ref: '#/components/schemas/CategoriesWithMostFindings'
+          - description: A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.
+        date:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date from which the metrics summary information was retrieved.
+        openFindings:
+          allOf:
+          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
+          - description: The number of open findings of each severity in an account.
+        scansWithMostOpenCriticalFindings:
+          allOf:
+          - $ref: '#/components/schemas/ScansWithMostOpenCriticalFindings'
+          - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.
+        scansWithMostOpenFindings:
+          allOf:
+          - $ref: '#/components/schemas/ScansWithMostOpenFindings'
+          - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.
+      description: Information about summary metrics in an account.
+    CategoriesWithMostFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/CategoryWithFindingNum'
+      minItems: 0
+      maxItems: 5
+    ThrottlingException: {}
+    String:
+      type: string
+    ValidationException: {}
+    ListFindingsMetricsResponse:
+      type: object
+      properties:
+        findingsMetrics:
+          allOf:
+          - $ref: '#/components/schemas/FindingsMetricList'
+          - description: A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: 'A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. '
+    ScanNameWithFindingNum:
+      type: object
+      properties:
+        findingNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of open findings generated by a scan.
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the scan.
+      description: Information about a scan with open findings.
+    AccessDeniedException: {}
+    InternalServerException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/codeguru-security/
+x-hasEquivalentPaths: true
