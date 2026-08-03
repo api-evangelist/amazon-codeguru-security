@@ -1,0 +1,28 @@
+{
+  "provider": "amazon-codeguru-security",
+  "sources": [
+    "amazon-codeguru-security-accountconfiguration-api-openapi.yml",
+    "amazon-codeguru-security-batchgetfindings-api-openapi.yml",
+    "amazon-codeguru-security-findings-api-openapi.yml",
+    "amazon-codeguru-security-metrics-api-openapi.yml",
+    "amazon-codeguru-security-scans-api-openapi.yml",
+    "amazon-codeguru-security-tags-api-openapi.yml",
+    "amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml",
+    "amazon-codeguru-security-uploadurl-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-codeguru-security-accountconfiguration-api-openapi.yml",
+    "amazon-codeguru-security-batchgetfindings-api-openapi.yml",
+    "amazon-codeguru-security-findings-api-openapi.yml",
+    "amazon-codeguru-security-metrics-api-openapi.yml",
+    "amazon-codeguru-security-scans-api-openapi.yml",
+    "amazon-codeguru-security-tags-api-openapi.yml",
+    "amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml",
+    "amazon-codeguru-security-uploadurl-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

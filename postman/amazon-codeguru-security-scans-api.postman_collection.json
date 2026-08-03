@@ -1,0 +1,1666 @@
+{
+  "info": {
+    "_postman_id": "0e9122e0-90f3-49dc-a609-0228a3848396",
+    "name": "Amazon CodeGuru Security AccountConfiguration Scans API",
+    "description": "<note> <p>Amazon CodeGuru Security is in preview release and is subject to change.</p> </note> <p>This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.</p> <p>By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the <a href=\"https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html\">Amazon CodeGuru Security User Guide</a>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:09:51.000Z",
+    "updatedAt": "2026-07-28T10:09:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0e9122e0-90f3-49dc-a609-0228a3848396"
+  },
+  "item": [
+    {
+      "name": "scans",
+      "item": [
+        {
+          "name": "{scanName}",
+          "item": [
+            {
+              "name": "Amazon CodeGuru Security Get Scan",
+              "id": "4aedc34b-6c77-440e-bd21-6e315b40b378",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/scans/:scanName?runId=cd6e2927-f2c5-0e70-65aa-f730717b911f",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans",
+                    ":scanName"
+                  ],
+                  "query": [
+                    {
+                      "description": "UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.",
+                      "key": "runId",
+                      "value": "cd6e2927-f2c5-0e70-65aa-f730717b911f"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "a02520f5-a5e9-48f1-8dc0-db8c7fc4c6d6",
+                      "key": "scanName",
+                      "value": "VgtTmVpm",
+                      "description": "(Required) The name of the scan you want to view details about."
+                    }
+                  ]
+                },
+                "description": "Returns details about a scan, including whether or not a scan has completed."
+              },
+              "response": [
+                {
+                  "id": "2a511c4d-d362-41ca-b707-9b8a442d5712",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/scans/:scanName?runId=cd6e2927-f2c5-0e70-65aa-f730717b911f",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "scans",
+                        ":scanName"
+                      ],
+                      "query": [
+                        {
+                          "description": "UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.",
+                          "key": "runId",
+                          "value": "cd6e2927-f2c5-0e70-65aa-f730717b911f"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "scanName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"analysisType\": \"Security\",\n  \"createdAt\": \"<dateTime>\",\n  \"runId\": \"2c1a4697-36b7-178e-9058-bf25fc354ae0\",\n  \"scanName\": \" \",\n  \"scanState\": \"Failed\",\n  \"numberOfRevisions\": \"<integer>\",\n  \"scanNameArn\": \"arn:aws:codeguru-security:dkTR:244118126965:scans/yHNZJB7Yah\",\n  \"updatedAt\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T10:09:52.000Z",
+                  "updatedAt": "2026-07-28T10:09:52.000Z",
+                  "uid": "35240-2a511c4d-d362-41ca-b707-9b8a442d5712"
+                },
+                {
+                  "id": "b9b35975-563f-42a5-adff-4fc7bf5944a2",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/scans/:scanName?runId=cd6e2927-f2c5-0e70-65aa-f730717b911f",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "scans",
+                        ":scanName"
+                      ],
+                      "query": [
+                        {
+                          "description": "UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.",
+                          "key": "runId",
+                          "value": "cd6e2927-f2c5-0e70-65aa-f730717b911f"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "scanName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:52.000Z",
+                  "updatedAt": "2026-07-28T10:09:52.000Z",
+                  "uid": "35240-b9b35975-563f-42a5-adff-4fc7bf5944a2"
+                },
+                {
+                  "id": "9600fbc6-f601-4ca8-af64-7318d218db95",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/scans/:scanName?runId=cd6e2927-f2c5-0e70-65aa-f730717b911f",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "scans",
+                        ":scanName"
+                      ],
+                      "query": [
+                        {
+                          "description": "UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.",
+                          "key": "runId",
+                          "value": "cd6e2927-f2c5-0e70-65aa-f730717b911f"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "scanName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:52.000Z",
+                  "updatedAt": "2026-07-28T10:09:52.000Z",
+                  "uid": "35240-9600fbc6-f601-4ca8-af64-7318d218db95"
+                },
+                {
+                  "id": "666b5be9-9b53-4fef-80c3-ebfa0722bd9a",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/scans/:scanName?runId=cd6e2927-f2c5-0e70-65aa-f730717b911f",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "scans",
+                        ":scanName"
+                      ],
+                      "query": [
+                        {
+                          "description": "UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.",
+                          "key": "runId",
+                          "value": "cd6e2927-f2c5-0e70-65aa-f730717b911f"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "scanName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:52.000Z",
+                  "updatedAt": "2026-07-28T10:09:52.000Z",
+                  "uid": "35240-666b5be9-9b53-4fef-80c3-ebfa0722bd9a"
+                },
+                {
+                  "id": "373582af-5785-4302-8be5-098bc0d8d0fb",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/scans/:scanName?runId=cd6e2927-f2c5-0e70-65aa-f730717b911f",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "scans",
+                        ":scanName"
+                      ],
+                      "query": [
+                        {
+                          "description": "UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.",
+                          "key": "runId",
+                          "value": "cd6e2927-f2c5-0e70-65aa-f730717b911f"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "scanName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:52.000Z",
+                  "updatedAt": "2026-07-28T10:09:52.000Z",
+                  "uid": "35240-373582af-5785-4302-8be5-098bc0d8d0fb"
+                }
+              ],
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-4aedc34b-6c77-440e-bd21-6e315b40b378"
+            }
+          ],
+          "id": "73bab981-2d1b-48fa-8b54-ecb0fb8e7f26",
+          "createdAt": "2026-07-28T10:09:52.000Z",
+          "updatedAt": "2026-07-28T10:09:52.000Z",
+          "uid": "35240-73bab981-2d1b-48fa-8b54-ecb0fb8e7f26"
+        },
+        {
+          "name": "Amazon CodeGuru Security Create Scan",
+          "id": "85828b37-f8c6-4072-8c65-43ff31eb2c58",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/scans",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "scans"
+              ]
+            },
+            "description": "Use to create a scan using code uploaded to an S3 bucket."
+          },
+          "response": [
+            {
+              "id": "2fd25dd2-5b06-4b19-952f-3459dcfc6bf4",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"a653d36e-c1aa-4663-41d2-55eafc25d04f\"\n  },\n  \"runId\": \"4524dae6-ef5f-ef08-e655-4730682142c9\",\n  \"scanName\": \"ixyEFwQ\",\n  \"scanState\": \"Failed\",\n  \"scanNameArn\": \"arn:aws:codeguru-security:bu:393415264799:scans/bmHJOtR\"\n}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-2fd25dd2-5b06-4b19-952f-3459dcfc6bf4"
+            },
+            {
+              "id": "afe853fe-da1f-46e1-9ebb-2056bddf436f",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-afe853fe-da1f-46e1-9ebb-2056bddf436f"
+            },
+            {
+              "id": "9ce35b71-b4e3-487d-850a-b768495a3f4f",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-9ce35b71-b4e3-487d-850a-b768495a3f4f"
+            },
+            {
+              "id": "f6b1942c-d97f-4bd6-8f49-ea04f00f26b4",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-f6b1942c-d97f-4bd6-8f49-ea04f00f26b4"
+            },
+            {
+              "id": "d0618df8-fe11-4cd6-80e1-0dcbfc12ca54",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-d0618df8-fe11-4cd6-80e1-0dcbfc12ca54"
+            },
+            {
+              "id": "5b58ec31-25b5-4f59-99e5-9db659fa071f",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-5b58ec31-25b5-4f59-99e5-9db659fa071f"
+            },
+            {
+              "id": "a8669f6d-193a-40f4-9dca-ff33d67a6882",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceId\": {\n    \"codeArtifactId\": \"b98d75dd-d273-6ab3-2c11-ad8235abbb0b\"\n  },\n  \"scanName\": \"Sj-o-:6\",\n  \"analysisType\": \"All\",\n  \"clientToken\": \"t@d1,hI[,@\",\n  \"scanType\": \"Standard\",\n  \"tags\": {\n    \"Ut90\": \"<string>\",\n    \"eiusmod_9e3\": \"<string>\",\n    \"sinte\": \"<string>\",\n    \"minimc\": \"<string>\",\n    \"aliqua_bf8\": \"<string>\",\n    \"ad_d16\": \"<string>\",\n    \"cillum_fbb\": \"<string>\",\n    \"adipisicing_b\": \"<string>\",\n    \"ex_a27\": \"<string>\",\n    \"nisi_d5\": \"<string>\",\n    \"ullamco_a\": \"<string>\",\n    \"eu_e\": \"<string>\",\n    \"sint_b\": \"<string>\",\n    \"Ut_8d\": \"<string>\",\n    \"mollit_3\": \"<string>\",\n    \"do_db4\": \"<string>\",\n    \"magna_2\": \"<string>\",\n    \"essef\": \"<string>\",\n    \"consequata\": \"<string>\",\n    \"do_6\": \"<string>\",\n    \"ipsum_dc\": \"<string>\",\n    \"aliqua43f\": \"<string>\",\n    \"velit_0\": \"<string>\",\n    \"aliquipa6\": \"<string>\",\n    \"voluptate_10\": \"<string>\",\n    \"velit_c\": \"<string>\",\n    \"eu__4\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"autecd\": \"<string>\",\n    \"Duis62\": \"<string>\",\n    \"nulladc\": \"<string>\",\n    \"dolor_638\": \"<string>\",\n    \"consequat_a3_\": \"<string>\",\n    \"ipsum_7\": \"<string>\",\n    \"suntb\": \"<string>\",\n    \"eu68a\": \"<string>\",\n    \"occaecat_f\": \"<string>\",\n    \"qui488\": \"<string>\",\n    \"in_b88\": \"<string>\",\n    \"mollit_3c1\": \"<string>\",\n    \"et5aa\": \"<string>\",\n    \"cillum_8\": \"<string>\",\n    \"fugiat_85\": \"<string>\",\n    \"aute50\": \"<string>\",\n    \"laborum0\": \"<string>\",\n    \"etf\": \"<string>\",\n    \"Utcd7\": \"<string>\",\n    \"do_4_1\": \"<string>\",\n    \"deserunt5\": \"<string>\",\n    \"ut_13\": \"<string>\",\n    \"ex_a9\": \"<string>\",\n    \"qui_8\": \"<string>\",\n    \"nulla9\": \"<string>\",\n    \"in_9\": \"<string>\",\n    \"exe5\": \"<string>\",\n    \"suntd\": \"<string>\",\n    \"ipsum_8\": \"<string>\",\n    \"do7c\": \"<string>\",\n    \"magna9\": \"<string>\",\n    \"laboris_16\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"reprehenderit_1\": \"<string>\",\n    \"magna4\": \"<string>\",\n    \"adipisicing_6\": \"<string>\",\n    \"deserunt_06\": \"<string>\",\n    \"Ut_91\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"aliqua09a\": \"<string>\",\n    \"elit2a\": \"<string>\",\n    \"anim_44\": \"<string>\",\n    \"ut_8c5\": \"<string>\",\n    \"incididunt_d\": \"<string>\",\n    \"laborum_aea\": \"<string>\",\n    \"cillum_a9_\": \"<string>\",\n    \"elit_9a5\": \"<string>\",\n    \"enim_4\": \"<string>\",\n    \"Excepteur3\": \"<string>\",\n    \"exercitation59\": \"<string>\",\n    \"exff\": \"<string>\",\n    \"cillum_81d\": \"<string>\",\n    \"ex7\": \"<string>\",\n    \"Lorem8e\": \"<string>\",\n    \"adipisicing57\": \"<string>\",\n    \"in3\": \"<string>\",\n    \"labore_3\": \"<string>\",\n    \"adc\": \"<string>\",\n    \"ullamcoc3\": \"<string>\",\n    \"ut86\": \"<string>\",\n    \"exercitationd_d\": \"<string>\",\n    \"cillum9\": \"<string>\",\n    \"commodo_d\": \"<string>\",\n    \"irure_5\": \"<string>\",\n    \"tempor15\": \"<string>\",\n    \"non_329\": \"<string>\",\n    \"mollit_083\": \"<string>\",\n    \"eu1_\": \"<string>\",\n    \"cillume95\": \"<string>\",\n    \"sint_3b\": \"<string>\",\n    \"in_2\": \"<string>\",\n    \"labore__cc\": \"<string>\",\n    \"sedc\": \"<string>\",\n    \"qui_9bb\": \"<string>\",\n    \"Excepteur_23\": \"<string>\",\n    \"anim_7a6\": \"<string>\",\n    \"enim_10c\": \"<string>\",\n    \"incf\": \"<string>\",\n    \"mollit2f7\": \"<string>\",\n    \"irure_6e\": \"<string>\",\n    \"eiusmod2\": \"<string>\",\n    \"id_8\": \"<string>\",\n    \"in_7fe\": \"<string>\",\n    \"consequat_4c0\": \"<string>\",\n    \"sedf7\": \"<string>\",\n    \"magna682\": \"<string>\",\n    \"Excepteur_61\": \"<string>\",\n    \"laborum__8\": \"<string>\",\n    \"estce\": \"<string>\",\n    \"ea_c_\": \"<string>\",\n    \"do__ad\": \"<string>\",\n    \"cillum7\": \"<string>\",\n    \"fugiatf56\": \"<string>\",\n    \"sed_7d\": \"<string>\",\n    \"in5df\": \"<string>\",\n    \"anim_c8\": \"<string>\",\n    \"Ut2\": \"<string>\",\n    \"non_ddb\": \"<string>\",\n    \"non__\": \"<string>\",\n    \"ipsum68\": \"<string>\",\n    \"laborum_a\": \"<string>\",\n    \"enim93\": \"<string>\",\n    \"aliquip8\": \"<string>\",\n    \"nisif\": \"<string>\",\n    \"in664\": \"<string>\",\n    \"ea_8\": \"<string>\",\n    \"ut_d\": \"<string>\",\n    \"in_f8\": \"<string>\",\n    \"occaecatdb\": \"<string>\",\n    \"elit4f\": \"<string>\",\n    \"magna_d\": \"<string>\",\n    \"dolore_1f\": \"<string>\",\n    \"Lorem_1\": \"<string>\",\n    \"in_df1\": \"<string>\",\n    \"aliquipf9\": \"<string>\",\n    \"ad_8f1\": \"<string>\",\n    \"laboris5\": \"<string>\",\n    \"exercitation_c87\": \"<string>\",\n    \"essef7e\": \"<string>\",\n    \"incididunt_d86\": \"<string>\",\n    \"deserunt_313\": \"<string>\",\n    \"commodo9e6\": \"<string>\",\n    \"Excepteur_be\": \"<string>\",\n    \"quis26\": \"<string>\",\n    \"dolore7\": \"<string>\",\n    \"cilluma04\": \"<string>\",\n    \"eu9d4\": \"<string>\",\n    \"mollit_d7\": \"<string>\",\n    \"magnaa2e\": \"<string>\",\n    \"in_621\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"estc9\": \"<string>\",\n    \"irure_a\": \"<string>\",\n    \"id_c\": \"<string>\",\n    \"ipsum_09\": \"<string>\",\n    \"dolore373\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"qui3\": \"<string>\",\n    \"sint3\": \"<string>\",\n    \"nisid8\": \"<string>\",\n    \"ipsum2\": \"<string>\",\n    \"incididunt_b4\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/scans",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-a8669f6d-193a-40f4-9dca-ff33d67a6882"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:52.000Z",
+          "updatedAt": "2026-07-28T10:09:52.000Z",
+          "uid": "35240-85828b37-f8c6-4072-8c65-43ff31eb2c58"
+        },
+        {
+          "name": "Amazon CodeGuru Security List Scans",
+          "id": "23bc2c84-75e1-429a-8032-7b234f601069",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/scans?maxResults=<integer>&nextToken=Mn",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "scans"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                  "key": "nextToken",
+                  "value": "Mn"
+                }
+              ]
+            },
+            "description": "Returns a list of all the standard scans in an account. Does not return express scans."
+          },
+          "response": [
+            {
+              "id": "37d8cd1a-58a2-4561-9a63-608f9db5ce88",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/scans?maxResults=<integer>&nextToken=Mn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                      "key": "nextToken",
+                      "value": "Mn"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"nextToken\": \"`dIzv0\",\n  \"summaries\": [\n    {\n      \"createdAt\": \"<dateTime>\",\n      \"runId\": \"91163a12-15f5-8641-4b61-169a8c2b1e35\",\n      \"scanName\": \"UnZg$\",\n      \"scanState\": \"InProgress\",\n      \"scanNameArn\": \"arn:aws:codeguru-security:4HP/\\\\ZNr(:091540740433:scans/8\",\n      \"updatedAt\": \"<dateTime>\"\n    },\n    {\n      \"createdAt\": \"<dateTime>\",\n      \"runId\": \"313f2820-0970-8aa7-0eeb-81d675781e64\",\n      \"scanName\": \"XTcANI\",\n      \"scanState\": \"Failed\",\n      \"scanNameArn\": \"arn:aws:codeguru-security:r[=JrTZqO:693995796411:scans/c\",\n      \"updatedAt\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-37d8cd1a-58a2-4561-9a63-608f9db5ce88"
+            },
+            {
+              "id": "30e42828-9c48-4cbf-87b7-86ab9f8f34a1",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/scans?maxResults=<integer>&nextToken=Mn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                      "key": "nextToken",
+                      "value": "Mn"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-30e42828-9c48-4cbf-87b7-86ab9f8f34a1"
+            },
+            {
+              "id": "0a8f519b-fb7c-40d8-869d-e7c429fe8a5d",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/scans?maxResults=<integer>&nextToken=Mn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                      "key": "nextToken",
+                      "value": "Mn"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-0a8f519b-fb7c-40d8-869d-e7c429fe8a5d"
+            },
+            {
+              "id": "e2cb5618-fc5c-40fc-ad3c-aee66c281be2",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/scans?maxResults=<integer>&nextToken=Mn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                      "key": "nextToken",
+                      "value": "Mn"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-e2cb5618-fc5c-40fc-ad3c-aee66c281be2"
+            },
+            {
+              "id": "3f86c110-b40a-49ef-801c-e14dd4b6b934",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/scans?maxResults=<integer>&nextToken=Mn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "scans"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                      "key": "nextToken",
+                      "value": "Mn"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:52.000Z",
+              "updatedAt": "2026-07-28T10:09:52.000Z",
+              "uid": "35240-3f86c110-b40a-49ef-801c-e14dd4b6b934"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:52.000Z",
+          "updatedAt": "2026-07-28T10:09:52.000Z",
+          "uid": "35240-23bc2c84-75e1-429a-8032-7b234f601069"
+        }
+      ],
+      "id": "f1145e5f-f4a9-4fc2-b8e0-0da3ba219da5",
+      "createdAt": "2026-07-28T10:09:52.000Z",
+      "updatedAt": "2026-07-28T10:09:52.000Z",
+      "uid": "35240-f1145e5f-f4a9-4fc2-b8e0-0da3ba219da5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codeguru-security.{{region}}.amazonaws.com"
+    }
+  ]
+}

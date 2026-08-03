@@ -1,0 +1,1071 @@
+{
+  "info": {
+    "_postman_id": "dc8d17b9-fca7-4af0-a0a0-fc8671ada1b2",
+    "name": "Amazon CodeGuru Security AccountConfiguration Metrics API",
+    "description": "<note> <p>Amazon CodeGuru Security is in preview release and is subject to change.</p> </note> <p>This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.</p> <p>By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the <a href=\"https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html\">Amazon CodeGuru Security User Guide</a>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:09:48.000Z",
+    "updatedAt": "2026-07-28T10:09:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dc8d17b9-fca7-4af0-a0a0-fc8671ada1b2"
+  },
+  "item": [
+    {
+      "name": "metrics",
+      "item": [
+        {
+          "name": "summary#date",
+          "item": [
+            {
+              "name": "Amazon CodeGuru Security Get Metrics Summary",
+              "id": "ff778440-63ce-400d-9416-fe417e1cc3e8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/metrics/summary?date=<dateTime>#date",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "metrics",
+                    "summary"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.",
+                      "key": "date",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "hash": "date"
+                },
+                "description": "Returns top level metrics about an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings. "
+              },
+              "response": [
+                {
+                  "id": "c6ff8612-6b1c-4eed-9f04-d87a4467ba8a",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/summary?date=<dateTime>#date",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.",
+                          "key": "date",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "date"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"metricsSummary\": {\n    \"categoriesWithMostFindings\": [\n      {\n        \"categoryName\": \"<string>\",\n        \"findingNumber\": \"<integer>\"\n      },\n      {\n        \"categoryName\": \"<string>\",\n        \"findingNumber\": \"<integer>\"\n      },\n      {\n        \"categoryName\": \"<string>\",\n        \"findingNumber\": \"<integer>\"\n      },\n      {\n        \"categoryName\": \"<string>\",\n        \"findingNumber\": \"<integer>\"\n      },\n      {\n        \"categoryName\": \"<string>\",\n        \"findingNumber\": \"<integer>\"\n      }\n    ],\n    \"date\": \"<dateTime>\",\n    \"openFindings\": {\n      \"critical\": \"<double>\",\n      \"high\": \"<double>\",\n      \"info\": \"<double>\",\n      \"low\": \"<double>\",\n      \"medium\": \"<double>\"\n    },\n    \"scansWithMostOpenCriticalFindings\": [\n      {\n        \"findingNumber\": \"<integer>\",\n        \"scanName\": \"<string>\"\n      },\n      {\n        \"findingNumber\": \"<integer>\",\n        \"scanName\": \"<string>\"\n      },\n      {\n        \"findingNumber\": \"<integer>\",\n        \"scanName\": \"<string>\"\n      }\n    ],\n    \"scansWithMostOpenFindings\": [\n      {\n        \"findingNumber\": \"<integer>\",\n        \"scanName\": \"<string>\"\n      },\n      {\n        \"findingNumber\": \"<integer>\",\n        \"scanName\": \"<string>\"\n      },\n      {\n        \"findingNumber\": \"<integer>\",\n        \"scanName\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-c6ff8612-6b1c-4eed-9f04-d87a4467ba8a"
+                },
+                {
+                  "id": "fee80fe8-686a-4f8d-834f-ef7e50a4ceec",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/summary?date=<dateTime>#date",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.",
+                          "key": "date",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "date"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-fee80fe8-686a-4f8d-834f-ef7e50a4ceec"
+                },
+                {
+                  "id": "41244897-cf76-44b0-b9cb-d620e7876676",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/summary?date=<dateTime>#date",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.",
+                          "key": "date",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "date"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-41244897-cf76-44b0-b9cb-d620e7876676"
+                },
+                {
+                  "id": "ac1db24f-be34-4872-9831-c64e62801a35",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/summary?date=<dateTime>#date",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.",
+                          "key": "date",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "date"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-ac1db24f-be34-4872-9831-c64e62801a35"
+                },
+                {
+                  "id": "2ca5565f-5513-4ab4-8a77-be07cf1ac2e1",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/summary?date=<dateTime>#date",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.",
+                          "key": "date",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "date"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-2ca5565f-5513-4ab4-8a77-be07cf1ac2e1"
+                }
+              ],
+              "createdAt": "2026-07-28T10:09:49.000Z",
+              "updatedAt": "2026-07-28T10:09:49.000Z",
+              "uid": "35240-ff778440-63ce-400d-9416-fe417e1cc3e8"
+            }
+          ],
+          "id": "2ba03877-833b-4ce9-8cfd-848fdaf31dc9",
+          "createdAt": "2026-07-28T10:09:49.000Z",
+          "updatedAt": "2026-07-28T10:09:49.000Z",
+          "uid": "35240-2ba03877-833b-4ce9-8cfd-848fdaf31dc9"
+        },
+        {
+          "name": "findings#endDate&startDate",
+          "item": [
+            {
+              "name": "Amazon CodeGuru Security List Findings Metrics",
+              "id": "785267a6-dc81-4bd0-a95a-c52e3ee1759f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/metrics/findings?endDate=<dateTime>&maxResults=<integer>&nextToken=_w%26\"=_%23y&startDate=<dateTime>#endDate&startDate",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "metrics",
+                    "findings"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The end date of the interval which you want to retrieve metrics from.",
+                      "key": "endDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                      "key": "nextToken",
+                      "value": "_w&\"=_#y"
+                    },
+                    {
+                      "description": "(Required) The start date of the interval which you want to retrieve metrics from.",
+                      "key": "startDate",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "hash": "endDate&startDate"
+                },
+                "description": "Returns metrics about all findings in an account within a specified time range."
+              },
+              "response": [
+                {
+                  "id": "eea170c1-ea18-4301-9659-6dce6c3ff722",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/findings?endDate=<dateTime>&maxResults=<integer>&nextToken=_w%26\"=_%23y&startDate=<dateTime>#endDate&startDate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "findings"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The end date of the interval which you want to retrieve metrics from.",
+                          "key": "endDate",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                          "key": "nextToken",
+                          "value": "_w&\"=_#y"
+                        },
+                        {
+                          "description": "(Required) The start date of the interval which you want to retrieve metrics from.",
+                          "key": "startDate",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "endDate&startDate"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"findingsMetrics\": [\n    {\n      \"closedFindings\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      },\n      \"date\": \"<dateTime>\",\n      \"meanTimeToClose\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      },\n      \"newFindings\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      },\n      \"openFindings\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      }\n    },\n    {\n      \"closedFindings\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      },\n      \"date\": \"<dateTime>\",\n      \"meanTimeToClose\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      },\n      \"newFindings\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      },\n      \"openFindings\": {\n        \"critical\": \"<double>\",\n        \"high\": \"<double>\",\n        \"info\": \"<double>\",\n        \"low\": \"<double>\",\n        \"medium\": \"<double>\"\n      }\n    }\n  ],\n  \"nextToken\": \"VpG1LAu_\"\n}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-eea170c1-ea18-4301-9659-6dce6c3ff722"
+                },
+                {
+                  "id": "c52ca4e7-f3e7-4ac6-8763-f2b238b474dc",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/findings?endDate=<dateTime>&maxResults=<integer>&nextToken=_w%26\"=_%23y&startDate=<dateTime>#endDate&startDate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "findings"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The end date of the interval which you want to retrieve metrics from.",
+                          "key": "endDate",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                          "key": "nextToken",
+                          "value": "_w&\"=_#y"
+                        },
+                        {
+                          "description": "(Required) The start date of the interval which you want to retrieve metrics from.",
+                          "key": "startDate",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "endDate&startDate"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-c52ca4e7-f3e7-4ac6-8763-f2b238b474dc"
+                },
+                {
+                  "id": "49793b96-e765-4fdb-a8b6-e65982dfa721",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/findings?endDate=<dateTime>&maxResults=<integer>&nextToken=_w%26\"=_%23y&startDate=<dateTime>#endDate&startDate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "findings"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The end date of the interval which you want to retrieve metrics from.",
+                          "key": "endDate",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                          "key": "nextToken",
+                          "value": "_w&\"=_#y"
+                        },
+                        {
+                          "description": "(Required) The start date of the interval which you want to retrieve metrics from.",
+                          "key": "startDate",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "endDate&startDate"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-49793b96-e765-4fdb-a8b6-e65982dfa721"
+                },
+                {
+                  "id": "8a369cf2-2836-4b90-a0ba-d9c265e9c3e0",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/findings?endDate=<dateTime>&maxResults=<integer>&nextToken=_w%26\"=_%23y&startDate=<dateTime>#endDate&startDate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "findings"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The end date of the interval which you want to retrieve metrics from.",
+                          "key": "endDate",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                          "key": "nextToken",
+                          "value": "_w&\"=_#y"
+                        },
+                        {
+                          "description": "(Required) The start date of the interval which you want to retrieve metrics from.",
+                          "key": "startDate",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "endDate&startDate"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-8a369cf2-2836-4b90-a0ba-d9c265e9c3e0"
+                },
+                {
+                  "id": "aa8b1013-3a61-4fbd-9564-933c2409f340",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metrics/findings?endDate=<dateTime>&maxResults=<integer>&nextToken=_w%26\"=_%23y&startDate=<dateTime>#endDate&startDate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metrics",
+                        "findings"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The end date of the interval which you want to retrieve metrics from.",
+                          "key": "endDate",
+                          "value": "<dateTime>"
+                        },
+                        {
+                          "description": "The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.",
+                          "key": "nextToken",
+                          "value": "_w&\"=_#y"
+                        },
+                        {
+                          "description": "(Required) The start date of the interval which you want to retrieve metrics from.",
+                          "key": "startDate",
+                          "value": "<dateTime>"
+                        }
+                      ],
+                      "hash": "endDate&startDate"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:49.000Z",
+                  "updatedAt": "2026-07-28T10:09:49.000Z",
+                  "uid": "35240-aa8b1013-3a61-4fbd-9564-933c2409f340"
+                }
+              ],
+              "createdAt": "2026-07-28T10:09:49.000Z",
+              "updatedAt": "2026-07-28T10:09:49.000Z",
+              "uid": "35240-785267a6-dc81-4bd0-a95a-c52e3ee1759f"
+            }
+          ],
+          "id": "e531dd1c-9868-4617-bd97-80e5ff305f2c",
+          "createdAt": "2026-07-28T10:09:49.000Z",
+          "updatedAt": "2026-07-28T10:09:49.000Z",
+          "uid": "35240-e531dd1c-9868-4617-bd97-80e5ff305f2c"
+        }
+      ],
+      "id": "51d60cbc-a36c-480c-9976-ab581b73d42b",
+      "createdAt": "2026-07-28T10:09:49.000Z",
+      "updatedAt": "2026-07-28T10:09:49.000Z",
+      "uid": "35240-51d60cbc-a36c-480c-9976-ab581b73d42b"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codeguru-security.{{region}}.amazonaws.com"
+    }
+  ]
+}

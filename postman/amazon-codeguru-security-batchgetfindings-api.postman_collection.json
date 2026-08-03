@@ -1,0 +1,538 @@
+{
+  "info": {
+    "_postman_id": "59f8c375-6806-4086-a20e-ac31016a90be",
+    "name": "Amazon CodeGuru Security AccountConfiguration BatchGetFindings API",
+    "description": "<note> <p>Amazon CodeGuru Security is in preview release and is subject to change.</p> </note> <p>This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.</p> <p>By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the <a href=\"https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html\">Amazon CodeGuru Security User Guide</a>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:09:46.000Z",
+    "updatedAt": "2026-07-28T10:09:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-59f8c375-6806-4086-a20e-ac31016a90be"
+  },
+  "item": [
+    {
+      "name": "batchGetFindings",
+      "item": [
+        {
+          "name": "Amazon CodeGuru Security Batch Get Findings",
+          "id": "77a3f711-0363-46f9-b13c-35eee8ac0d5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"findingIdentifiers\": [\n    {\n      \"findingId\": \"<string>\",\n      \"scanName\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/batchGetFindings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "batchGetFindings"
+              ]
+            },
+            "description": "Returns a list of all requested findings."
+          },
+          "response": [
+            {
+              "id": "31bf6b58-68fe-4f0f-820d-9007ec9c70f6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"findingIdentifiers\": [\n    {\n      \"findingId\": \"<string>\",\n      \"scanName\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/batchGetFindings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "batchGetFindings"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"failedFindings\": [\n    {\n      \"errorCode\": \"DUPLICATE_IDENTIFIER\",\n      \"findingId\": \"<string>\",\n      \"message\": \"<string>\",\n      \"scanName\": \"L54X\"\n    },\n    {\n      \"errorCode\": \"DUPLICATE_IDENTIFIER\",\n      \"findingId\": \"<string>\",\n      \"message\": \"<string>\",\n      \"scanName\": \"z2oF0E\"\n    }\n  ],\n  \"findings\": [\n    {\n      \"createdAt\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"detectorId\": \"<string>\",\n      \"detectorName\": \"<string>\",\n      \"detectorTags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatorId\": \"<string>\",\n      \"id\": \"<string>\",\n      \"remediation\": {\n        \"recommendation\": {\n          \"text\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        \"suggestedFixes\": [\n          {\n            \"code\": \"<string>\",\n            \"description\": \"<string>\"\n          },\n          {\n            \"code\": \"<string>\",\n            \"description\": \"<string>\"\n          }\n        ]\n      },\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"subResourceId\": \"<string>\"\n      },\n      \"ruleId\": \"<string>\",\n      \"severity\": \"Info\",\n      \"status\": \"All\",\n      \"title\": \"<string>\",\n      \"type\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"vulnerability\": {\n        \"filePath\": {\n          \"codeSnippet\": [\n            {\n              \"content\": \"<string>\",\n              \"number\": \"<integer>\"\n            },\n            {\n              \"content\": \"<string>\",\n              \"number\": \"<integer>\"\n            }\n          ],\n          \"endLine\": \"<integer>\",\n          \"name\": \"<string>\",\n          \"path\": \"<string>\",\n          \"startLine\": \"<integer>\"\n        },\n        \"id\": \"<string>\",\n        \"itemCount\": \"<integer>\",\n        \"referenceUrls\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"relatedVulnerabilities\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    {\n      \"createdAt\": \"<dateTime>\",\n      \"description\": \"<string>\",\n      \"detectorId\": \"<string>\",\n      \"detectorName\": \"<string>\",\n      \"detectorTags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatorId\": \"<string>\",\n      \"id\": \"<string>\",\n      \"remediation\": {\n        \"recommendation\": {\n          \"text\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        \"suggestedFixes\": [\n          {\n            \"code\": \"<string>\",\n            \"description\": \"<string>\"\n          },\n          {\n            \"code\": \"<string>\",\n            \"description\": \"<string>\"\n          }\n        ]\n      },\n      \"resource\": {\n        \"id\": \"<string>\",\n        \"subResourceId\": \"<string>\"\n      },\n      \"ruleId\": \"<string>\",\n      \"severity\": \"High\",\n      \"status\": \"Open\",\n      \"title\": \"<string>\",\n      \"type\": \"<string>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"vulnerability\": {\n        \"filePath\": {\n          \"codeSnippet\": [\n            {\n              \"content\": \"<string>\",\n              \"number\": \"<integer>\"\n            },\n            {\n              \"content\": \"<string>\",\n              \"number\": \"<integer>\"\n            }\n          ],\n          \"endLine\": \"<integer>\",\n          \"name\": \"<string>\",\n          \"path\": \"<string>\",\n          \"startLine\": \"<integer>\"\n        },\n        \"id\": \"<string>\",\n        \"itemCount\": \"<integer>\",\n        \"referenceUrls\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"relatedVulnerabilities\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:09:47.000Z",
+              "updatedAt": "2026-07-28T10:09:47.000Z",
+              "uid": "35240-31bf6b58-68fe-4f0f-820d-9007ec9c70f6"
+            },
+            {
+              "id": "11157823-a643-4012-afd0-52592991044b",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"findingIdentifiers\": [\n    {\n      \"findingId\": \"<string>\",\n      \"scanName\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/batchGetFindings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "batchGetFindings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:47.000Z",
+              "updatedAt": "2026-07-28T10:09:47.000Z",
+              "uid": "35240-11157823-a643-4012-afd0-52592991044b"
+            },
+            {
+              "id": "fa9d23e3-601e-4c64-97de-11b1833a5bb4",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"findingIdentifiers\": [\n    {\n      \"findingId\": \"<string>\",\n      \"scanName\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/batchGetFindings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "batchGetFindings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:47.000Z",
+              "updatedAt": "2026-07-28T10:09:47.000Z",
+              "uid": "35240-fa9d23e3-601e-4c64-97de-11b1833a5bb4"
+            },
+            {
+              "id": "9c545e3f-dd5c-4d16-a3e7-c17236fa0fa8",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"findingIdentifiers\": [\n    {\n      \"findingId\": \"<string>\",\n      \"scanName\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/batchGetFindings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "batchGetFindings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:47.000Z",
+              "updatedAt": "2026-07-28T10:09:47.000Z",
+              "uid": "35240-9c545e3f-dd5c-4d16-a3e7-c17236fa0fa8"
+            },
+            {
+              "id": "7472376f-3ea0-4404-b915-4c5fdd0266c2",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"findingIdentifiers\": [\n    {\n      \"findingId\": \"<string>\",\n      \"scanName\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/batchGetFindings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "batchGetFindings"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:47.000Z",
+              "updatedAt": "2026-07-28T10:09:47.000Z",
+              "uid": "35240-7472376f-3ea0-4404-b915-4c5fdd0266c2"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:47.000Z",
+          "updatedAt": "2026-07-28T10:09:47.000Z",
+          "uid": "35240-77a3f711-0363-46f9-b13c-35eee8ac0d5b"
+        }
+      ],
+      "id": "837a7463-62ac-4e77-812d-c0ad0a082758",
+      "createdAt": "2026-07-28T10:09:47.000Z",
+      "updatedAt": "2026-07-28T10:09:47.000Z",
+      "uid": "35240-837a7463-62ac-4e77-812d-c0ad0a082758"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codeguru-security.{{region}}.amazonaws.com"
+    }
+  ]
+}
