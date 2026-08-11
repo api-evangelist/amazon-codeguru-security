@@ -161,6 +161,8 @@ apis:
   - type: Packages
     url: packages/amazon-codeguru-security-packages.yml
 common:
+- type: Overlay
+  url: overlays/amazon-codeguru-security-openapi-overlay.yaml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-codeguru-security/overview
 - type: AgenticAccess
