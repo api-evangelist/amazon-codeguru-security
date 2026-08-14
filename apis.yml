@@ -1,7 +1,10 @@
 aid: amazon-codeguru-security
 name: Amazon CodeGuru Security
-description: Amazon CodeGuru Security is a static application security testing (SAST) service that uses machine learning to detect security vulnerabilities in your code. It identifies vulnerabilities 
-  such as injection flaws, data exposure risks, and infrastructure-as-code misconfigurations, and provides actionable remediation guidance to help developers fix security issues quickly.
+description: >-
+  Amazon CodeGuru Security is a static application security testing (SAST) service that uses machine learning to detect
+  security vulnerabilities in your code. It identifies vulnerabilities such as injection flaws, data exposure risks, and
+  infrastructure-as-code misconfigurations, and provides actionable remediation guidance to help developers fix security
+  issues quickly.
 type: Index
 accessModel:
   pricing: unknown
@@ -12,241 +15,238 @@ accessModel:
   label: Self-serve signup
   confidence: medium
   source:
-  - authentication
+    - authentication
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-codeguru-security.png
 tags:
-- Amazon
-- AWS
-- Security
-- SAST
-- Code Analysis
-- DevSecOps
-- Developer Tools
+  - Amazon
+  - AWS
+  - Security
+  - SAST
+  - Code Analysis
+  - DevSecOps
+  - Developer Tools
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-codeguru-security:amazon-codeguru-security-accountconfiguration-api
-  name: Amazon CodeGuru Security AccountConfiguration API
-  description: >-
-    The AccountConfiguration API from Amazon CodeGuru Security — 1 operation(s) for accountconfiguration.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - AccountConfiguration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-accountconfiguration-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-batchgetfindings-api
-  name: Amazon CodeGuru Security BatchGetFindings API
-  description: >-
-    The BatchGetFindings API from Amazon CodeGuru Security — 1 operation(s) for batchgetfindings.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - BatchGetFindings
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-batchgetfindings-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-findings-api
-  name: Amazon CodeGuru Security Findings API
-  description: The Findings API from Amazon CodeGuru Security — 1 operation(s) for findings.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - Findings
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-findings-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-metrics-api
-  name: Amazon CodeGuru Security Metrics API
-  description: The Metrics API from Amazon CodeGuru Security — 2 operation(s) for metrics.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - Metrics
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-metrics-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-scans-api
-  name: Amazon CodeGuru Security Scans API
-  description: The Scans API from Amazon CodeGuru Security — 2 operation(s) for scans.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - Scans
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-scans-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-tags-api
-  name: Amazon CodeGuru Security Tags API
-  description: The Tags API from Amazon CodeGuru Security — 2 operation(s) for tags.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-tags-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-updateaccountconfiguration-api
-  name: Amazon CodeGuru Security UpdateAccountConfiguration API
-  description: >-
-    The UpdateAccountConfiguration API from Amazon CodeGuru Security — 1 operation(s) for updateaccountconfiguration.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - UpdateAccountConfiguration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-uploadurl-api
-  name: Amazon CodeGuru Security UploadUrl API
-  description: The UploadUrl API from Amazon CodeGuru Security — 1 operation(s) for uploadurl.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - UploadUrl
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-uploadurl-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-accountconfiguration-api
+    name: Amazon CodeGuru Security AccountConfiguration API
+    description: The AccountConfiguration API from Amazon CodeGuru Security — 1 operation(s) for accountconfiguration.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - AccountConfiguration
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-accountconfiguration-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-batchgetfindings-api
+    name: Amazon CodeGuru Security BatchGetFindings API
+    description: The BatchGetFindings API from Amazon CodeGuru Security — 1 operation(s) for batchgetfindings.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - BatchGetFindings
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-batchgetfindings-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-findings-api
+    name: Amazon CodeGuru Security Findings API
+    description: The Findings API from Amazon CodeGuru Security — 1 operation(s) for findings.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - Findings
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-findings-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-metrics-api
+    name: Amazon CodeGuru Security Metrics API
+    description: The Metrics API from Amazon CodeGuru Security — 2 operation(s) for metrics.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - Metrics
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-metrics-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-scans-api
+    name: Amazon CodeGuru Security Scans API
+    description: The Scans API from Amazon CodeGuru Security — 2 operation(s) for scans.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - Scans
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-scans-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-tags-api
+    name: Amazon CodeGuru Security Tags API
+    description: The Tags API from Amazon CodeGuru Security — 2 operation(s) for tags.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - Tags
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-tags-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-updateaccountconfiguration-api
+    name: Amazon CodeGuru Security UpdateAccountConfiguration API
+    description: The UpdateAccountConfiguration API from Amazon CodeGuru Security — 1 operation(s) for updateaccountconfiguration.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - UpdateAccountConfiguration
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
+  - aid: amazon-codeguru-security:amazon-codeguru-security-uploadurl-api
+    name: Amazon CodeGuru Security UploadUrl API
+    description: The UploadUrl API from Amazon CodeGuru Security — 1 operation(s) for uploadurl.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+    baseURL: https://codeguru-security.us-east-1.amazonaws.com
+    tags:
+      - UploadUrl
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-security-uploadurl-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurusecurity/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+      - type: Packages
+        url: packages/amazon-codeguru-security-packages.yml
 common:
-- type: Overlay
-  url: overlays/amazon-codeguru-security-openapi-overlay.yaml
-- type: PostmanWorkspace
-  url: https://www.postman.com/kinlaneapi/amazon-codeguru-security/overview
-- type: AgenticAccess
-  url: agentic-access/amazon-codeguru-security-agentic-access.yml
-- type: TrustCenter
-  url: security/amazon-codeguru-security-trust-center.yml
-- type: VulnerabilityDisclosure
-  url: security/amazon-codeguru-security-vulnerability-disclosure.yml
-- type: DomainSecurity
-  url: security/amazon-codeguru-security-domain-security.yml
-- type: Authentication
-  url: authentication/amazon-codeguru-security-authentication.yml
-- type: GettingStarted
-  url: https://docs.aws.amazon.com/codeguru/security
-- type: Pricing
-  url: https://aws.amazon.com/codegurusecurity/pricing/
-- type: Console
-  url: https://console.aws.amazon.com/codegurusecurity/
-- type: Portal
-  url: https://aws.amazon.com/codegurusecurity/
-- type: Documentation
-  url: https://docs.aws.amazon.com/codegurusecurity/
-- type: TermsOfService
-  url: https://aws.amazon.com/service-terms/
-- type: PrivacyPolicy
-  url: https://aws.amazon.com/privacy/
-- type: StatusPage
-  url: https://health.aws.amazon.com/health/status
-- type: Blog
-  url: https://aws.amazon.com/blogs/devops/
-- type: SignUp
-  url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html
-- type: GitHubOrganization
-  url: https://github.com/aws
-- type: SpectralRules
-  url: rules/amazon-codeguru-security-spectral-rules.yml
-- type: Vocabulary
-  url: vocabulary/amazon-codeguru-security-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-codeguru-security-security-scanning.yaml
-- type: JSONLD
-  url: json-ld/amazon-codeguru-security-context.jsonld
-- type: WellKnown
-  url: well-known/amazon-codeguru-security-well-known.yml
-- type: MCPServer
-  url: mcp/amazon-codeguru-security-mcp.yml
-- type: LLMsTxt
-  url: llms/amazon-codeguru-security-llms.txt
-- type: Conformance
-  url: conformance/amazon-codeguru-security-conformance.yml
-- type: ErrorCatalog
-  url: errors/amazon-codeguru-security-problem-types.yml
-- type: Lifecycle
-  url: lifecycle/amazon-codeguru-security-lifecycle.yml
-- type: Features
-  data:
-  - name: Static Application Security Testing
-    description: Analyze source code for security vulnerabilities without running the application using machine learning-powered SAST.
-  - name: Multi-Language Support
-    description: Detect security issues in Java, Python, JavaScript, TypeScript, C, C++, C#, Go, Ruby, and Kotlin code.
-  - name: Infrastructure-as-Code Scanning
-    description: Detect security misconfigurations in CloudFormation, Terraform, CDK, and other IaC templates.
-  - name: Severity Classification
-    description: Classify findings by severity (Critical, High, Medium, Low, Informational) to help prioritize remediation.
-  - name: Remediation Guidance
-    description: Provide detailed remediation recommendations including suggested code fixes for each identified vulnerability.
-- type: UseCases
-  data:
-  - name: DevSecOps Integration
-    description: Integrate security scanning into CI/CD pipelines to detect vulnerabilities before code reaches production.
-  - name: Security Audit and Compliance
-    description: Run security scans on existing codebases to identify and remediate vulnerabilities for compliance audits.
-  - name: IaC Security Validation
-    description: Scan infrastructure-as-code templates for security misconfigurations before provisioning cloud resources.
-- type: Integrations
-  data:
-  - name: AWS CodeBuild
-    description: Run security scans as part of CodeBuild build projects for CI/CD integration.
-  - name: GitHub Actions
-    description: Add CodeGuru Security scanning to GitHub Actions workflows.
-  - name: AWS Security Hub
-    description: Send security findings to Security Hub for centralized security management.
-  - name: Amazon S3
-    description: Store and retrieve code bundles for security scanning from S3.
+  - type: Overlay
+    url: overlays/amazon-codeguru-security-openapi-overlay.yaml
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-codeguru-security/overview
+  - type: AgenticAccess
+    url: agentic-access/amazon-codeguru-security-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-codeguru-security-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-codeguru-security-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-codeguru-security-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-codeguru-security-authentication.yml
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/codeguru/security
+  - type: Pricing
+    url: https://aws.amazon.com/codegurusecurity/pricing/
+  - type: Console
+    url: https://console.aws.amazon.com/codegurusecurity/
+  - type: Portal
+    url: https://aws.amazon.com/codegurusecurity/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurusecurity/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Blog
+    url: https://aws.amazon.com/blogs/devops/
+  - type: SignUp
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: SpectralRules
+    url: rules/amazon-codeguru-security-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-codeguru-security-vocabulary.yaml
+  - type: JSONLD
+    url: json-ld/amazon-codeguru-security-context.jsonld
+  - type: WellKnown
+    url: well-known/amazon-codeguru-security-well-known.yml
+  - type: MCPServer
+    url: mcp/amazon-codeguru-security-mcp.yml
+  - type: LLMsTxt
+    url: llms/amazon-codeguru-security-llms.txt
+  - type: Conformance
+    url: conformance/amazon-codeguru-security-conformance.yml
+  - type: ErrorCatalog
+    url: errors/amazon-codeguru-security-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/amazon-codeguru-security-lifecycle.yml
+  - type: Features
+    data:
+      - name: Static Application Security Testing
+        description: >-
+          Analyze source code for security vulnerabilities without running the application using machine
+          learning-powered SAST.
+      - name: Multi-Language Support
+        description: Detect security issues in Java, Python, JavaScript, TypeScript, C, C++, C#, Go, Ruby, and Kotlin code.
+      - name: Infrastructure-as-Code Scanning
+        description: Detect security misconfigurations in CloudFormation, Terraform, CDK, and other IaC templates.
+      - name: Severity Classification
+        description: Classify findings by severity (Critical, High, Medium, Low, Informational) to help prioritize remediation.
+      - name: Remediation Guidance
+        description: Provide detailed remediation recommendations including suggested code fixes for each identified vulnerability.
+  - type: UseCases
+    data:
+      - name: DevSecOps Integration
+        description: Integrate security scanning into CI/CD pipelines to detect vulnerabilities before code reaches production.
+      - name: Security Audit and Compliance
+        description: Run security scans on existing codebases to identify and remediate vulnerabilities for compliance audits.
+      - name: IaC Security Validation
+        description: Scan infrastructure-as-code templates for security misconfigurations before provisioning cloud resources.
+  - type: Integrations
+    data:
+      - name: AWS CodeBuild
+        description: Run security scans as part of CodeBuild build projects for CI/CD integration.
+      - name: GitHub Actions
+        description: Add CodeGuru Security scanning to GitHub Actions workflows.
+      - name: AWS Security Hub
+        description: Send security findings to Security Hub for centralized security management.
+      - name: Amazon S3
+        description: Store and retrieve code bundles for security scanning from S3.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
