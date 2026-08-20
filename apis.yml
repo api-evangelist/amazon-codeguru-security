@@ -38,6 +38,8 @@ apis:
     humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
     baseURL: https://codeguru-security.us-east-1.amazonaws.com
     tags:
+      - Account Configuration
+    tags_raw:
       - AccountConfiguration
     properties:
       - type: OpenAPI
@@ -150,6 +152,8 @@ apis:
     humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
     baseURL: https://codeguru-security.us-east-1.amazonaws.com
     tags:
+      - Upload URL
+    tags_raw:
       - UploadUrl
     properties:
       - type: OpenAPI
