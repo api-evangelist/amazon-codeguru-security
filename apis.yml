@@ -50,7 +50,7 @@ apis:
     humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
     baseURL: https://codeguru-security.us-east-1.amazonaws.com
     tags:
-      - AccountConfiguration
+      - Account Configuration
     tags_raw:
       - AccountConfiguration
     properties:
@@ -164,7 +164,7 @@ apis:
     humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
     baseURL: https://codeguru-security.us-east-1.amazonaws.com
     tags:
-      - UploadUrl
+      - Upload URL
     tags_raw:
       - UploadUrl
     properties:
