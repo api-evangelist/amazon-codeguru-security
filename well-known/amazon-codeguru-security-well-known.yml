@@ -2,12 +2,12 @@ generated: '2026-06-20'
 method: searched
 source: probed the CodeGuru Security regional API host for standard discovery documents
 host: https://codeguru-security.us-east-1.amazonaws.com
-notes: >-
-  The CodeGuru Security API endpoint is an AWS SigV4-signed service host and does
-  not publish any /.well-known/ discovery surface. Every probe returned HTTP 403
-  (unsigned request rejected), not a served discovery document, so no raw files
-  were captured.
-documents:
+notes: The CodeGuru Security API endpoint is an AWS SigV4-signed service host and does not publish any
+  /.well-known/ discovery surface. Every probe returned HTTP 403 (unsigned request rejected), not a served
+  discovery document, so no raw files were captured.
+hosts:
+- host: https://codeguru-security.us-east-1.amazonaws.com
+  documents:
   - path: /.well-known/security.txt
     status: 403
   - path: /.well-known/openid-configuration
@@ -18,3 +18,8 @@ documents:
     status: 403
   - path: /.well-known/ai-plugin.json
     status: 403
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.

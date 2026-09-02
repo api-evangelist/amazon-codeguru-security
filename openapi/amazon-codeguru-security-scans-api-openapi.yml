@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Amazon CodeGuru Security AccountConfiguration Scans API
   description: <note> <p>Amazon CodeGuru Security is in preview release and is subject to change.</p> </note> <p>This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.</p> <p>By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html">Amazon CodeGuru Security User Guide</a>. </p>
@@ -462,75 +462,49 @@ paths:
       tags:
       - Scans
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    AnalysisType:
+    ValidationException: {}
+    ScanSummary:
+      type: object
+      required:
+      - createdAt
+      - runId
+      - scanName
+      - scanState
+      properties:
+        createdAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: ' The time when the scan was created. '
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: 'The identifier for the scan run. '
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/ScanName'
+          - description: 'The name of the scan. '
+        scanNameArn:
+          allOf:
+          - $ref: '#/components/schemas/ScanNameArn'
+          - description: The ARN for the scan name.
+        scanState:
+          allOf:
+          - $ref: '#/components/schemas/ScanState'
+          - description: 'The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>. '
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time the scan was last updated. A scan is updated when it is re-run.
+      description: 'Information about a scan. '
+    ScanNameArn:
       type: string
-      enum:
-      - Security
-      - All
-    ResourceNotFoundException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    NextToken:
-      type: string
-      pattern: ^[\S]+$
+      pattern: ^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$
       minLength: 1
-      maxLength: 2048
-    ConflictException: {}
-    ScanState:
+      maxLength: 300
+    Uuid:
       type: string
-      enum:
-      - InProgress
-      - Successful
-      - Failed
-    ScanSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ScanSummary'
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
     CreateScanResponse:
       type: object
       required:
@@ -559,14 +533,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScanState'
           - description: The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.
-    ResourceId:
-      type: object
-      properties:
-        codeArtifactId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: The identifier for the code file uploaded to the resource where a finding was detected.
-      description: The identifier for a resource object that contains resources where a finding was detected.
     ListScansResponse:
       type: object
       properties:
@@ -578,14 +544,50 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScanSummaries'
           - description: A list of <code>ScanSummary</code> objects with information about all scans in an account.
-    Uuid:
+    ResourceId:
+      type: object
+      properties:
+        codeArtifactId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: The identifier for the code file uploaded to the resource where a finding was detected.
+      description: The identifier for a resource object that contains resources where a finding was detected.
+    ConflictException: {}
+    InternalServerException: {}
+    ScanName:
       type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      pattern: ^[a-zA-Z0-9-_$:.]*$
+      minLength: 1
+      maxLength: 140
+    ScanState:
+      type: string
+      enum:
+      - InProgress
+      - Successful
+      - Failed
+    Long:
+      type: integer
+    ThrottlingException: {}
+    AccessDeniedException: {}
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    ThrottlingException: {}
+    AnalysisType:
+      type: string
+      enum:
+      - Security
+      - All
+    ResourceNotFoundException: {}
+    ScanSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScanSummary'
+    NextToken:
+      type: string
+      pattern: ^[\S]+$
+      minLength: 1
+      maxLength: 2048
     GetScanResponse:
       type: object
       required:
@@ -627,54 +629,52 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.
-    ValidationException: {}
-    ScanNameArn:
+    Timestamp:
       type: string
-      pattern: ^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 300
-    ScanSummary:
-      type: object
-      required:
-      - createdAt
-      - runId
-      - scanName
-      - scanState
-      properties:
-        createdAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: ' The time when the scan was created. '
-        runId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: 'The identifier for the scan run. '
-        scanName:
-          allOf:
-          - $ref: '#/components/schemas/ScanName'
-          - description: 'The name of the scan. '
-        scanNameArn:
-          allOf:
-          - $ref: '#/components/schemas/ScanNameArn'
-          - description: The ARN for the scan name.
-        scanState:
-          allOf:
-          - $ref: '#/components/schemas/ScanState'
-          - description: 'The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>. '
-        updatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time the scan was last updated. A scan is updated when it is re-run.
-      description: 'Information about a scan. '
-    ScanName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 140
-    AccessDeniedException: {}
-    InternalServerException: {}
-    Long:
-      type: integer
+      format: date-time
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
