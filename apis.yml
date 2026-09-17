@@ -44,40 +44,6 @@ created: '2026-03-16'
 modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
-- aid: amazon-codeguru-security:amazon-codeguru-security-accountconfiguration-api
-  name: Amazon CodeGuru Security AccountConfiguration API
-  description: The AccountConfiguration API from Amazon CodeGuru Security — 1 operation(s) for accountconfiguration.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - Account Configuration
-  tags_raw:
-  - AccountConfiguration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-accountconfiguration-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-batchgetfindings-api
-  name: Amazon CodeGuru Security BatchGetFindings API
-  description: The BatchGetFindings API from Amazon CodeGuru Security — 1 operation(s) for batchgetfindings.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  baseURL: https://codeguru-security.us-east-1.amazonaws.com
-  tags:
-  - BatchGetFindings
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-security-batchgetfindings-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurusecurity/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
-  - type: Packages
-    url: packages/amazon-codeguru-security-packages.yml
 - aid: amazon-codeguru-security:amazon-codeguru-security-findings-api
   name: Amazon CodeGuru Security Findings API
   description: The Findings API from Amazon CodeGuru Security — 1 operation(s) for findings.
@@ -142,34 +108,68 @@ apis:
     url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
   - type: Packages
     url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-updateaccountconfiguration-api
-  name: Amazon CodeGuru Security UpdateAccountConfiguration API
-  description: The UpdateAccountConfiguration API from Amazon CodeGuru Security — 1 operation(s) for updateaccountconfiguration.
+- aid: amazon-codeguru-security:amazon-codeguru-security-account-configuration-api
+  name: Amazon CodeGuru Security Account Configuration API
+  description: >-
+    The Account Configuration API from Amazon CodeGuru Security — 1 operation(s) for account configuration.
   humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
   baseURL: https://codeguru-security.us-east-1.amazonaws.com
   tags:
-  - UpdateAccountConfiguration
+  - Account Configuration
   properties:
   - type: OpenAPI
-    url: openapi/amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml
+    url: openapi/amazon-codeguru-security-account-configuration-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/codegurusecurity/
   - type: APIReference
     url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
   - type: Packages
     url: packages/amazon-codeguru-security-packages.yml
-- aid: amazon-codeguru-security:amazon-codeguru-security-uploadurl-api
-  name: Amazon CodeGuru Security UploadUrl API
-  description: The UploadUrl API from Amazon CodeGuru Security — 1 operation(s) for uploadurl.
+- aid: amazon-codeguru-security:amazon-codeguru-security-batch-get-findings-api
+  name: Amazon CodeGuru Security Batch Get Findings API
+  description: >-
+    The Batch Get Findings API from Amazon CodeGuru Security — 1 operation(s) for batch get findings.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  baseURL: https://codeguru-security.us-east-1.amazonaws.com
+  tags:
+  - Batch Get Findings
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-security-batch-get-findings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurusecurity/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  - type: Packages
+    url: packages/amazon-codeguru-security-packages.yml
+- aid: amazon-codeguru-security:amazon-codeguru-security-update-account-configuration-api
+  name: Amazon CodeGuru Security Update Account Configuration API
+  description: >-
+    The Update Account Configuration API from Amazon CodeGuru Security — 1 operation(s) for update account
+    configuration.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  baseURL: https://codeguru-security.us-east-1.amazonaws.com
+  tags:
+  - Update Account Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-security-update-account-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurusecurity/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
+  - type: Packages
+    url: packages/amazon-codeguru-security-packages.yml
+- aid: amazon-codeguru-security:amazon-codeguru-security-upload-url-api
+  name: Amazon CodeGuru Security Upload URL API
+  description: The Upload URL API from Amazon CodeGuru Security — 1 operation(s) for upload url.
   humanURL: https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html
   baseURL: https://codeguru-security.us-east-1.amazonaws.com
   tags:
   - Upload URL
-  tags_raw:
-  - UploadUrl
   properties:
   - type: OpenAPI
-    url: openapi/amazon-codeguru-security-uploadurl-api-openapi.yml
+    url: openapi/amazon-codeguru-security-upload-url-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/codegurusecurity/
   - type: APIReference
