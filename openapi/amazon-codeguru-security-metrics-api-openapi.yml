@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2018-05-10'
   x-release: v4
-  title: Amazon CodeGuru Security AccountConfiguration Metrics API
-  description: <note> <p>Amazon CodeGuru Security is in preview release and is subject to change.</p> </note> <p>This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.</p> <p>By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the <a href="https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html">Amazon CodeGuru Security User Guide</a>. </p>
+  title: Amazon CodeGuru Security Metrics API
+  description: Amazon CodeGuru Security is in preview release and is subject to change.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codeguru-security-2018-05-10.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: GetMetricsSummary
-      description: 'Returns top level metrics about an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings. '
+      description: Returns top level metrics about an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings.
       responses:
         '200':
           description: Success
@@ -306,8 +307,57 @@ paths:
       tags:
       - Metrics
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ValidationException: {}
+    CategoriesWithMostFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/CategoryWithFindingNum'
+      minItems: 0
+      maxItems: 5
+    InternalServerException: {}
     MetricsSummary:
       type: object
       properties:
@@ -332,45 +382,6 @@ components:
           - $ref: '#/components/schemas/ScansWithMostOpenFindings'
           - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.
       description: Information about summary metrics in an account.
-    FindingMetricsValuePerSeverity:
-      type: object
-      properties:
-        critical:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is critical and should be addressed immediately.
-        high:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is high and should be addressed as a near-term priority.
-        info:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The finding is related to quality or readability improvements and not considered actionable.
-        low:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is low and does require action on its own.
-        medium:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is medium and should be addressed as a mid-term priority.
-      description: The severity of the issue in the code that generated a finding.
-    Double:
-      type: number
-      format: double
-    ScanNameWithFindingNum:
-      type: object
-      properties:
-        findingNumber:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of open findings generated by a scan.
-        scanName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the scan.
-      description: Information about a scan with open findings.
     CategoryWithFindingNum:
       type: object
       properties:
@@ -383,6 +394,21 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The number of open findings in the category.
       description: Information about a finding category with open findings.
+    ValidationException: {}
+    ScansWithMostOpenCriticalFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScanNameWithFindingNum'
+      minItems: 0
+      maxItems: 3
+    String:
+      type: string
+    FindingsMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccountFindingsMetric'
+    Integer:
+      type: integer
     ListFindingsMetricsResponse:
       type: object
       properties:
@@ -394,26 +420,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: 'A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. '
-    String:
-      type: string
-    InternalServerException: {}
-    Integer:
-      type: integer
-    GetMetricsSummaryResponse:
-      type: object
-      properties:
-        metricsSummary:
-          allOf:
-          - $ref: '#/components/schemas/MetricsSummary'
-          - description: The summary metrics from the specified date.
     ScansWithMostOpenFindings:
       type: array
       items:
         $ref: '#/components/schemas/ScanNameWithFindingNum'
       minItems: 0
       maxItems: 3
-    ThrottlingException: {}
-    AccessDeniedException: {}
+    Timestamp:
+      type: string
+      format: date-time
     AccountFindingsMetric:
       type: object
       properties:
@@ -438,73 +453,59 @@ components:
           - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
           - description: The number of open findings of each severity in an account as of the specified date.
       description: A summary of findings metrics in an account.
-    ScansWithMostOpenCriticalFindings:
-      type: array
-      items:
-        $ref: '#/components/schemas/ScanNameWithFindingNum'
-      minItems: 0
-      maxItems: 3
-    CategoriesWithMostFindings:
-      type: array
-      items:
-        $ref: '#/components/schemas/CategoryWithFindingNum'
-      minItems: 0
-      maxItems: 5
+    GetMetricsSummaryResponse:
+      type: object
+      properties:
+        metricsSummary:
+          allOf:
+          - $ref: '#/components/schemas/MetricsSummary'
+          - description: The summary metrics from the specified date.
+    Double:
+      type: number
+      format: double
+    ThrottlingException: {}
+    FindingMetricsValuePerSeverity:
+      type: object
+      properties:
+        critical:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is critical and should be addressed immediately.
+        high:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is high and should be addressed as a near-term priority.
+        info:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The finding is related to quality or readability improvements and not considered actionable.
+        low:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is low and does require action on its own.
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is medium and should be addressed as a mid-term priority.
+      description: The severity of the issue in the code that generated a finding.
+    AccessDeniedException: {}
+    ScanNameWithFindingNum:
+      type: object
+      properties:
+        findingNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of open findings generated by a scan.
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the scan.
+      description: Information about a scan with open findings.
     NextToken:
       type: string
       pattern: ^[\S]+$
       minLength: 1
       maxLength: 2048
-    Timestamp:
-      type: string
-      format: date-time
-    FindingsMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccountFindingsMetric'
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

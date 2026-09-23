@@ -1,14 +1,7 @@
 {
   "provider": "amazon-codeguru-security",
   "sources": [
-    "amazon-codeguru-security-accountconfiguration-api-openapi.yml",
-    "amazon-codeguru-security-batchgetfindings-api-openapi.yml",
-    "amazon-codeguru-security-findings-api-openapi.yml",
-    "amazon-codeguru-security-metrics-api-openapi.yml",
-    "amazon-codeguru-security-scans-api-openapi.yml",
-    "amazon-codeguru-security-tags-api-openapi.yml",
-    "amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml",
-    "amazon-codeguru-security-uploadurl-api-openapi.yml"
+    "_original/amazon-codeguru-security-openapi-original.yaml"
   ],
   "outputs": [
     "amazon-codeguru-security-accountconfiguration-api-openapi.yml",
@@ -20,11 +13,46 @@
     "amazon-codeguru-security-updateaccountconfiguration-api-openapi.yml",
     "amazon-codeguru-security-uploadurl-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 4 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-codeguru-security-openapi-original.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths POST /batchGetFindings -> BatchGetFindings",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths POST /scans -> Scans",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /scans -> Scans",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths POST /uploadUrl -> UploadUrl",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /accountConfiguration/get -> AccountConfiguration",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /findings/{scanName} -> Findings",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /metrics/summary#date -> Metrics",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /scans/{scanName} -> Scans",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /metrics/findings#endDate&startDate -> Metrics",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths GET /tags/{resourceArn} -> Tags",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths POST /tags/{resourceArn} -> Tags",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths DELETE /tags/{resourceArn}#tagKeys -> Tags",
+    "amazon-codeguru-security-openapi-original.yaml: tagged paths PUT /updateAccountConfiguration -> UpdateAccountConfiguration",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: AccountConfiguration",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: BatchGetFindings",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: Findings",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: Metrics",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: Scans",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: Tags",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: UpdateAccountConfiguration",
+    "amazon-codeguru-security-openapi-original.yaml: declared missing tag: UploadUrl",
+    "superseded outputs removed: amazon-codeguru-security-account-configuration-api-openapi.yml, amazon-codeguru-security-batch-get-findings-api-openapi.yml, amazon-codeguru-security-update-account-configuration-api-openapi.yml, amazon-codeguru-security-upload-url-api-openapi.yml",
+    "apis.yml register: written (+4 apis, 8 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-codeguru-security-account-configuration-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-batch-get-findings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-findings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-scans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-update-account-configuration-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-security-upload-url-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
