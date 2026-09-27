@@ -219,7 +219,15 @@ paths:
       - Upload URL
 components:
   schemas:
-    AccessDeniedException: {}
+    HeaderValue:
+      type: string
+      minLength: 1
+    ValidationException: {}
+    ThrottlingException: {}
+    S3Url:
+      type: string
+      minLength: 1
+      format: password
     CreateUploadUrlResponse:
       type: object
       required:
@@ -239,32 +247,24 @@ components:
           allOf:
           - $ref: '#/components/schemas/S3Url'
           - description: A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.
-    HeaderValue:
-      type: string
-      minLength: 1
-    InternalServerException: {}
-    ThrottlingException: {}
-    S3Url:
-      type: string
-      minLength: 1
-      format: password
     RequestHeaderMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/HeaderValue'
-    ValidationException: {}
     Uuid:
       type: string
       pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+    AccessDeniedException: {}
+    InternalServerException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -275,20 +275,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

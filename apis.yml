@@ -39,6 +39,7 @@ tags:
 - Code Analysis
 - DevSecOps
 - Developer Tools
+- Defunct
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-09-16'
@@ -277,5 +278,8 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
+x-status: defunct
+x-status-detail: AWS discontinued support for Amazon CodeGuru Security on 2025-11-20 (AWS, End of support for CodeGuru Security); its console, docs and product page are gone.
+x-status-source: https://web.archive.org/web/20251104100907/https://docs.aws.amazon.com/codeguru/latest/security-ug/end-of-support.html

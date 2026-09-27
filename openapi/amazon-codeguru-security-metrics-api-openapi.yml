@@ -307,108 +307,13 @@ paths:
       tags:
       - Metrics
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    CategoriesWithMostFindings:
-      type: array
-      items:
-        $ref: '#/components/schemas/CategoryWithFindingNum'
-      minItems: 0
-      maxItems: 5
-    InternalServerException: {}
-    MetricsSummary:
-      type: object
-      properties:
-        categoriesWithMostFindings:
-          allOf:
-          - $ref: '#/components/schemas/CategoriesWithMostFindings'
-          - description: A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.
-        date:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The date from which the metrics summary information was retrieved.
-        openFindings:
-          allOf:
-          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
-          - description: The number of open findings of each severity in an account.
-        scansWithMostOpenCriticalFindings:
-          allOf:
-          - $ref: '#/components/schemas/ScansWithMostOpenCriticalFindings'
-          - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.
-        scansWithMostOpenFindings:
-          allOf:
-          - $ref: '#/components/schemas/ScansWithMostOpenFindings'
-          - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.
-      description: Information about summary metrics in an account.
-    CategoryWithFindingNum:
-      type: object
-      properties:
-        categoryName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the finding category. A finding category is determined by the detector that detected the finding.
-        findingNumber:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of open findings in the category.
-      description: Information about a finding category with open findings.
-    ValidationException: {}
     ScansWithMostOpenCriticalFindings:
       type: array
       items:
         $ref: '#/components/schemas/ScanNameWithFindingNum'
       minItems: 0
       maxItems: 3
-    String:
-      type: string
-    FindingsMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccountFindingsMetric'
-    Integer:
-      type: integer
     ListFindingsMetricsResponse:
       type: object
       properties:
@@ -420,15 +325,15 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: 'A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. '
-    ScansWithMostOpenFindings:
+    FindingsMetricList:
       type: array
       items:
-        $ref: '#/components/schemas/ScanNameWithFindingNum'
-      minItems: 0
-      maxItems: 3
-    Timestamp:
+        $ref: '#/components/schemas/AccountFindingsMetric'
+    NextToken:
       type: string
-      format: date-time
+      pattern: ^[\S]+$
+      minLength: 1
+      maxLength: 2048
     AccountFindingsMetric:
       type: object
       properties:
@@ -453,17 +358,11 @@ components:
           - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
           - description: The number of open findings of each severity in an account as of the specified date.
       description: A summary of findings metrics in an account.
-    GetMetricsSummaryResponse:
-      type: object
-      properties:
-        metricsSummary:
-          allOf:
-          - $ref: '#/components/schemas/MetricsSummary'
-          - description: The summary metrics from the specified date.
-    Double:
-      type: number
-      format: double
-    ThrottlingException: {}
+    AccessDeniedException: {}
+    String:
+      type: string
+    Integer:
+      type: integer
     FindingMetricsValuePerSeverity:
       type: object
       properties:
@@ -488,7 +387,46 @@ components:
           - $ref: '#/components/schemas/Double'
           - description: The severity of the finding is medium and should be addressed as a mid-term priority.
       description: The severity of the issue in the code that generated a finding.
-    AccessDeniedException: {}
+    ValidationException: {}
+    ThrottlingException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    Double:
+      type: number
+      format: double
+    InternalServerException: {}
+    ScansWithMostOpenFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScanNameWithFindingNum'
+      minItems: 0
+      maxItems: 3
+    CategoriesWithMostFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/CategoryWithFindingNum'
+      minItems: 0
+      maxItems: 5
+    GetMetricsSummaryResponse:
+      type: object
+      properties:
+        metricsSummary:
+          allOf:
+          - $ref: '#/components/schemas/MetricsSummary'
+          - description: The summary metrics from the specified date.
+    CategoryWithFindingNum:
+      type: object
+      properties:
+        categoryName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the finding category. A finding category is determined by the detector that detected the finding.
+        findingNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of open findings in the category.
+      description: Information about a finding category with open findings.
     ScanNameWithFindingNum:
       type: object
       properties:
@@ -501,11 +439,73 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The name of the scan.
       description: Information about a scan with open findings.
-    NextToken:
-      type: string
-      pattern: ^[\S]+$
-      minLength: 1
-      maxLength: 2048
+    MetricsSummary:
+      type: object
+      properties:
+        categoriesWithMostFindings:
+          allOf:
+          - $ref: '#/components/schemas/CategoriesWithMostFindings'
+          - description: A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.
+        date:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date from which the metrics summary information was retrieved.
+        openFindings:
+          allOf:
+          - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
+          - description: The number of open findings of each severity in an account.
+        scansWithMostOpenCriticalFindings:
+          allOf:
+          - $ref: '#/components/schemas/ScansWithMostOpenCriticalFindings'
+          - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.
+        scansWithMostOpenFindings:
+          allOf:
+          - $ref: '#/components/schemas/ScansWithMostOpenFindings'
+          - description: A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.
+      description: Information about summary metrics in an account.
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
