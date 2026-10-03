@@ -459,32 +459,7 @@ paths:
       - Tags
 components:
   schemas:
-    UntagResourceResponse:
-      type: object
-      properties: {}
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
     AccessDeniedException: {}
-    ValidationException: {}
-    ThrottlingException: {}
-    ConflictException: {}
-    InternalServerException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
-    TagMap:
-      type: object
-      minProperties: 0
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    ResourceNotFoundException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -492,25 +467,32 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: <p>An array of key-value pairs used to tag an existing scan. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li> <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li> </ul>
+    ConflictException: {}
+    TagResourceResponse:
+      type: object
+      properties: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    InternalServerException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    TagMap:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ThrottlingException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -523,14 +505,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

@@ -464,6 +464,66 @@ paths:
       - Scans
 components:
   schemas:
+    AccessDeniedException: {}
+    ResourceId:
+      type: object
+      properties:
+        codeArtifactId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: The identifier for the code file uploaded to the resource where a finding was detected.
+      description: The identifier for a resource object that contains resources where a finding was detected.
+    ConflictException: {}
+    ScanState:
+      type: string
+      enum:
+      - InProgress
+      - Successful
+      - Failed
+    CreateScanResponse:
+      type: object
+      required:
+      - resourceId
+      - runId
+      - scanName
+      - scanState
+      properties:
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: The identifier for the resource object that contains resources that were scanned.
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: UUID that identifies the individual scan run.
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/ScanName'
+          - description: The name of the scan.
+        scanNameArn:
+          allOf:
+          - $ref: '#/components/schemas/ScanNameArn'
+          - description: The ARN for the scan name.
+        scanState:
+          allOf:
+          - $ref: '#/components/schemas/ScanState'
+          - description: The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.
+    AnalysisType:
+      type: string
+      enum:
+      - Security
+      - All
+    InternalServerException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ScanName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_$:.]*$
+      minLength: 1
+      maxLength: 140
+    ResourceNotFoundException: {}
     ListScansResponse:
       type: object
       properties:
@@ -475,19 +535,53 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScanSummaries'
           - description: A list of <code>ScanSummary</code> objects with information about all scans in an account.
-    NextToken:
-      type: string
-      pattern: ^[\S]+$
-      minLength: 1
-      maxLength: 2048
-    AccessDeniedException: {}
-    AnalysisType:
-      type: string
-      enum:
-      - Security
-      - All
+    Long:
+      type: integer
     ValidationException: {}
-    ThrottlingException: {}
+    Uuid:
+      type: string
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+    Timestamp:
+      type: string
+      format: date-time
+    ScanSummary:
+      type: object
+      required:
+      - createdAt
+      - runId
+      - scanName
+      - scanState
+      properties:
+        createdAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: ' The time when the scan was created. '
+        runId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: 'The identifier for the scan run. '
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/ScanName'
+          - description: 'The name of the scan. '
+        scanNameArn:
+          allOf:
+          - $ref: '#/components/schemas/ScanNameArn'
+          - description: The ARN for the scan name.
+        scanState:
+          allOf:
+          - $ref: '#/components/schemas/ScanState'
+          - description: 'The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>. '
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time the scan was last updated. A scan is updated when it is re-run.
+      description: 'Information about a scan. '
+    ScanNameArn:
+      type: string
+      pattern: ^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$
+      minLength: 1
+      maxLength: 300
     GetScanResponse:
       type: object
       required:
@@ -529,135 +623,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.
-    Timestamp:
+    NextToken:
       type: string
-      format: date-time
-    Long:
-      type: integer
-    ConflictException: {}
-    InternalServerException: {}
-    CreateScanResponse:
-      type: object
-      required:
-      - resourceId
-      - runId
-      - scanName
-      - scanState
-      properties:
-        resourceId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: The identifier for the resource object that contains resources that were scanned.
-        runId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: UUID that identifies the individual scan run.
-        scanName:
-          allOf:
-          - $ref: '#/components/schemas/ScanName'
-          - description: The name of the scan.
-        scanNameArn:
-          allOf:
-          - $ref: '#/components/schemas/ScanNameArn'
-          - description: The ARN for the scan name.
-        scanState:
-          allOf:
-          - $ref: '#/components/schemas/ScanState'
-          - description: The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.
-    Uuid:
-      type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+      pattern: ^[\S]+$
+      minLength: 1
+      maxLength: 2048
+    ThrottlingException: {}
     ScanSummaries:
       type: array
       items:
         $ref: '#/components/schemas/ScanSummary'
-    ScanState:
-      type: string
-      enum:
-      - InProgress
-      - Successful
-      - Failed
-    ScanName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 140
-    ResourceNotFoundException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ResourceId:
-      type: object
-      properties:
-        codeArtifactId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: The identifier for the code file uploaded to the resource where a finding was detected.
-      description: The identifier for a resource object that contains resources where a finding was detected.
-    ScanSummary:
-      type: object
-      required:
-      - createdAt
-      - runId
-      - scanName
-      - scanState
-      properties:
-        createdAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: ' The time when the scan was created. '
-        runId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: 'The identifier for the scan run. '
-        scanName:
-          allOf:
-          - $ref: '#/components/schemas/ScanName'
-          - description: 'The name of the scan. '
-        scanNameArn:
-          allOf:
-          - $ref: '#/components/schemas/ScanNameArn'
-          - description: The ARN for the scan name.
-        scanState:
-          allOf:
-          - $ref: '#/components/schemas/ScanState'
-          - description: 'The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>, or <code>Failed</code>. '
-        updatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time the scan was last updated. A scan is updated when it is re-run.
-      description: 'Information about a scan. '
-    ScanNameArn:
-      type: string
-      pattern: ^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 300
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -670,8 +646,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
