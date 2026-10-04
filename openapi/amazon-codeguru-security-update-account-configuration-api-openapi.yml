@@ -233,8 +233,7 @@ components:
       pattern: ^arn:aws:kms:[\S]+:[\d]{12}:key\/(([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})|(mrk-[0-9a-zA-Z]{32}))$
       minLength: 1
       maxLength: 2048
-    ResourceNotFoundException: {}
-    AccessDeniedException: {}
+    InternalServerException: {}
     EncryptionConfig:
       type: object
       properties:
@@ -243,6 +242,10 @@ components:
           - $ref: '#/components/schemas/KmsKeyArn'
           - description: The KMS key ARN to use for encryption. This must be provided as a header when uploading your code resource.
       description: Information about account-level configuration.
+    AccessDeniedException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    ThrottlingException: {}
     UpdateAccountConfigurationResponse:
       type: object
       required:
@@ -252,18 +255,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/EncryptionConfig'
           - description: An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.
-    InternalServerException: {}
-    ThrottlingException: {}
-    ValidationException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -280,20 +286,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

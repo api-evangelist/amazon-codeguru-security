@@ -218,234 +218,6 @@ paths:
       - Batch Get Findings
 components:
   schemas:
-    BatchGetFindingsErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchGetFindingsError'
-    AccessDeniedException: {}
-    SuggestedFixes:
-      type: array
-      items:
-        $ref: '#/components/schemas/SuggestedFix'
-    Integer:
-      type: integer
-    Severity:
-      type: string
-      enum:
-      - Critical
-      - High
-      - Medium
-      - Low
-      - Info
-    SuggestedFix:
-      type: object
-      properties:
-        code:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The suggested code to add to your file. '
-        description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'A description of the suggested code fix and why it is being suggested. '
-      description: Information about the suggested code fix to remediate a finding.
-    FindingIdentifier:
-      type: object
-      required:
-      - findingId
-      - scanName
-      properties:
-        findingId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier for a finding.
-        scanName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The name of the scan that generated the finding. '
-      description: 'An object that contains information about a finding and the scan that generated it. '
-    CodeSnippet:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeLine'
-    Recommendation:
-      type: object
-      properties:
-        text:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The recommended course of action to remediate the finding.
-        url:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The URL address to the recommendation for remediating the finding. '
-      description: Information about the recommended course of action to remediate a finding.
-    Resource:
-      type: object
-      properties:
-        id:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier for the resource.
-        subResourceId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier for a section of the resource, such as an AWS Lambda layer.
-      description: Information about a resource, such as an Amazon S3 bucket or AWS Lambda function, that contains a finding.
-    InternalServerException: {}
-    ScanName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 140
-    ErrorCode:
-      type: string
-      enum:
-      - DUPLICATE_IDENTIFIER
-      - ITEM_DOES_NOT_EXIST
-      - INTERNAL_ERROR
-      - INVALID_FINDING_ID
-      - INVALID_SCAN_NAME
-    Status:
-      type: string
-      enum:
-      - Closed
-      - Open
-      - All
-    DetectorTags:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    FilePath:
-      type: object
-      properties:
-        codeSnippet:
-          allOf:
-          - $ref: '#/components/schemas/CodeSnippet'
-          - description: A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.
-        endLine:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The last line number of the code snippet where the security vulnerability appears in your code.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the file.
-        path:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The path to the resource with the security vulnerability.
-        startLine:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The first line number of the code snippet where the security vulnerability appears in your code.
-      description: Information about the location of security vulnerabilities that Amazon CodeGuru Security detected in your code.
-    Remediation:
-      type: object
-      properties:
-        recommendation:
-          allOf:
-          - $ref: '#/components/schemas/Recommendation'
-          - description: An object that contains information about the recommended course of action to remediate a finding.
-        suggestedFixes:
-          allOf:
-          - $ref: '#/components/schemas/SuggestedFixes'
-          - description: A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.
-      description: Information about how to remediate a finding.
-    Vulnerability:
-      type: object
-      properties:
-        filePath:
-          allOf:
-          - $ref: '#/components/schemas/FilePath'
-          - description: ' An object that describes the location of the detected security vulnerability in your code.'
-        id:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier for the vulnerability.
-        itemCount:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: ' The number of times the vulnerability appears in your code.'
-        referenceUrls:
-          allOf:
-          - $ref: '#/components/schemas/ReferenceUrls'
-          - description: One or more URL addresses that contain details about a vulnerability.
-        relatedVulnerabilities:
-          allOf:
-          - $ref: '#/components/schemas/RelatedVulnerabilities'
-          - description: One or more vulnerabilities that are related to the vulnerability being described.
-      description: Information about a security vulnerability that Amazon CodeGuru Security detected.
-    CodeLine:
-      type: object
-      properties:
-        content:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The code that contains a vulnerability.
-        number:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The code line number.
-      description: The line of code where a finding was detected.
-    ValidationException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    RelatedVulnerabilities:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    BatchGetFindingsError:
-      type: object
-      required:
-      - errorCode
-      - findingId
-      - message
-      - scanName
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/ErrorCode'
-          - description: A code associated with the type of error.
-        findingId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The finding ID of the finding that was not fetched.
-        message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Describes the error.
-        scanName:
-          allOf:
-          - $ref: '#/components/schemas/ScanName'
-          - description: The name of the scan that generated the finding.
-      description: Contains information about the error that caused a finding to fail to be retrieved.
-    String:
-      type: string
-    BatchGetFindingsResponse:
-      type: object
-      required:
-      - failedFindings
-      - findings
-      properties:
-        failedFindings:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetFindingsErrors'
-          - description: A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.
-        findings:
-          allOf:
-          - $ref: '#/components/schemas/Findings'
-          - description: ' A list of all requested findings.'
-    ReferenceUrls:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ThrottlingException: {}
-    Findings:
-      type: array
-      items:
-        $ref: '#/components/schemas/Finding'
     Finding:
       type: object
       properties:
@@ -514,21 +286,237 @@ components:
           - $ref: '#/components/schemas/Vulnerability'
           - description: An object that describes the detected security vulnerability.
       description: Information about a finding that was detected in your code.
+    InternalServerException: {}
+    ReferenceUrls:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    BatchGetFindingsErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchGetFindingsError'
+    Recommendation:
+      type: object
+      properties:
+        text:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The recommended course of action to remediate the finding.
+        url:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The URL address to the recommendation for remediating the finding. '
+      description: Information about the recommended course of action to remediate a finding.
+    Vulnerability:
+      type: object
+      properties:
+        filePath:
+          allOf:
+          - $ref: '#/components/schemas/FilePath'
+          - description: ' An object that describes the location of the detected security vulnerability in your code.'
+        id:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for the vulnerability.
+        itemCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: ' The number of times the vulnerability appears in your code.'
+        referenceUrls:
+          allOf:
+          - $ref: '#/components/schemas/ReferenceUrls'
+          - description: One or more URL addresses that contain details about a vulnerability.
+        relatedVulnerabilities:
+          allOf:
+          - $ref: '#/components/schemas/RelatedVulnerabilities'
+          - description: One or more vulnerabilities that are related to the vulnerability being described.
+      description: Information about a security vulnerability that Amazon CodeGuru Security detected.
+    RelatedVulnerabilities:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    Integer:
+      type: integer
+    BatchGetFindingsResponse:
+      type: object
+      required:
+      - failedFindings
+      - findings
+      properties:
+        failedFindings:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetFindingsErrors'
+          - description: A list of errors for individual findings which were not fetched. Each BatchGetFindingsError contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code> and error <code>message</code>.
+        findings:
+          allOf:
+          - $ref: '#/components/schemas/Findings'
+          - description: ' A list of all requested findings.'
+    DetectorTags:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    Resource:
+      type: object
+      properties:
+        id:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for the resource.
+        subResourceId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for a section of the resource, such as an AWS Lambda layer.
+      description: Information about a resource, such as an Amazon S3 bucket or AWS Lambda function, that contains a finding.
+    Remediation:
+      type: object
+      properties:
+        recommendation:
+          allOf:
+          - $ref: '#/components/schemas/Recommendation'
+          - description: An object that contains information about the recommended course of action to remediate a finding.
+        suggestedFixes:
+          allOf:
+          - $ref: '#/components/schemas/SuggestedFixes'
+          - description: A list of <code>SuggestedFix</code> objects. Each object contains information about a suggested code fix to remediate the finding.
+      description: Information about how to remediate a finding.
+    SuggestedFixes:
+      type: array
+      items:
+        $ref: '#/components/schemas/SuggestedFix'
+    ErrorCode:
+      type: string
+      enum:
+      - DUPLICATE_IDENTIFIER
+      - ITEM_DOES_NOT_EXIST
+      - INTERNAL_ERROR
+      - INVALID_FINDING_ID
+      - INVALID_SCAN_NAME
+    CodeLine:
+      type: object
+      properties:
+        content:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The code that contains a vulnerability.
+        number:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The code line number.
+      description: The line of code where a finding was detected.
+    ScanName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_$:.]*$
+      minLength: 1
+      maxLength: 140
+    FilePath:
+      type: object
+      properties:
+        codeSnippet:
+          allOf:
+          - $ref: '#/components/schemas/CodeSnippet'
+          - description: A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.
+        endLine:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The last line number of the code snippet where the security vulnerability appears in your code.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the file.
+        path:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The path to the resource with the security vulnerability.
+        startLine:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The first line number of the code snippet where the security vulnerability appears in your code.
+      description: Information about the location of security vulnerabilities that Amazon CodeGuru Security detected in your code.
+    AccessDeniedException: {}
+    Severity:
+      type: string
+      enum:
+      - Critical
+      - High
+      - Medium
+      - Low
+      - Info
+    Timestamp:
+      type: string
+      format: date-time
+    SuggestedFix:
+      type: object
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The suggested code to add to your file. '
+        description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A description of the suggested code fix and why it is being suggested. '
+      description: Information about the suggested code fix to remediate a finding.
+    CodeSnippet:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeLine'
+    String:
+      type: string
+    ValidationException: {}
+    ThrottlingException: {}
+    Findings:
+      type: array
+      items:
+        $ref: '#/components/schemas/Finding'
+    BatchGetFindingsError:
+      type: object
+      required:
+      - errorCode
+      - findingId
+      - message
+      - scanName
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: A code associated with the type of error.
+        findingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The finding ID of the finding that was not fetched.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Describes the error.
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/ScanName'
+          - description: The name of the scan that generated the finding.
+      description: Contains information about the error that caused a finding to fail to be retrieved.
+    FindingIdentifier:
+      type: object
+      required:
+      - findingId
+      - scanName
+      properties:
+        findingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for a finding.
+        scanName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the scan that generated the finding. '
+      description: 'An object that contains information about a finding and the scan that generated it. '
+    Status:
+      type: string
+      enum:
+      - Closed
+      - Open
+      - All
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -539,8 +527,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -551,8 +551,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

@@ -308,33 +308,31 @@ paths:
       - Metrics
 components:
   schemas:
-    AccessDeniedException: {}
-    ScansWithMostOpenCriticalFindings:
-      type: array
-      items:
-        $ref: '#/components/schemas/ScanNameWithFindingNum'
-      minItems: 0
-      maxItems: 3
-    Integer:
-      type: integer
-    ListFindingsMetricsResponse:
+    FindingMetricsValuePerSeverity:
       type: object
       properties:
-        findingsMetrics:
+        critical:
           allOf:
-          - $ref: '#/components/schemas/FindingsMetricList'
-          - description: A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.
-        nextToken:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is critical and should be addressed immediately.
+        high:
           allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: 'A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. '
-    GetMetricsSummaryResponse:
-      type: object
-      properties:
-        metricsSummary:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is high and should be addressed as a near-term priority.
+        info:
           allOf:
-          - $ref: '#/components/schemas/MetricsSummary'
-          - description: The summary metrics from the specified date.
+          - $ref: '#/components/schemas/Double'
+          - description: The finding is related to quality or readability improvements and not considered actionable.
+        low:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is low and does require action on its own.
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The severity of the finding is medium and should be addressed as a mid-term priority.
+      description: The severity of the issue in the code that generated a finding.
+    InternalServerException: {}
     MetricsSummary:
       type: object
       properties:
@@ -362,7 +360,6 @@ components:
     Double:
       type: number
       format: double
-    InternalServerException: {}
     ScanNameWithFindingNum:
       type: object
       properties:
@@ -375,42 +372,12 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The name of the scan.
       description: Information about a scan with open findings.
-    CategoryWithFindingNum:
-      type: object
-      properties:
-        categoryName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the finding category. A finding category is determined by the detector that detected the finding.
-        findingNumber:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The number of open findings in the category.
-      description: Information about a finding category with open findings.
-    FindingMetricsValuePerSeverity:
-      type: object
-      properties:
-        critical:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is critical and should be addressed immediately.
-        high:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is high and should be addressed as a near-term priority.
-        info:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The finding is related to quality or readability improvements and not considered actionable.
-        low:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is low and does require action on its own.
-        medium:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The severity of the finding is medium and should be addressed as a mid-term priority.
-      description: The severity of the issue in the code that generated a finding.
+    CategoriesWithMostFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/CategoryWithFindingNum'
+      minItems: 0
+      maxItems: 5
     AccountFindingsMetric:
       type: object
       properties:
@@ -435,43 +402,76 @@ components:
           - $ref: '#/components/schemas/FindingMetricsValuePerSeverity'
           - description: The number of open findings of each severity in an account as of the specified date.
       description: A summary of findings metrics in an account.
+    ScansWithMostOpenCriticalFindings:
+      type: array
+      items:
+        $ref: '#/components/schemas/ScanNameWithFindingNum'
+      minItems: 0
+      maxItems: 3
+    ListFindingsMetricsResponse:
+      type: object
+      properties:
+        findingsMetrics:
+          allOf:
+          - $ref: '#/components/schemas/FindingsMetricList'
+          - description: A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: 'A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. '
+    Integer:
+      type: integer
+    FindingsMetricList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AccountFindingsMetric'
+    NextToken:
+      type: string
+      pattern: ^[\S]+$
+      minLength: 1
+      maxLength: 2048
+    GetMetricsSummaryResponse:
+      type: object
+      properties:
+        metricsSummary:
+          allOf:
+          - $ref: '#/components/schemas/MetricsSummary'
+          - description: The summary metrics from the specified date.
+    AccessDeniedException: {}
+    Timestamp:
+      type: string
+      format: date-time
     ScansWithMostOpenFindings:
       type: array
       items:
         $ref: '#/components/schemas/ScanNameWithFindingNum'
       minItems: 0
       maxItems: 3
-    ValidationException: {}
-    FindingsMetricList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AccountFindingsMetric'
-    Timestamp:
-      type: string
-      format: date-time
+    CategoryWithFindingNum:
+      type: object
+      properties:
+        categoryName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the finding category. A finding category is determined by the detector that detected the finding.
+        findingNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of open findings in the category.
+      description: Information about a finding category with open findings.
     String:
       type: string
-    CategoriesWithMostFindings:
-      type: array
-      items:
-        $ref: '#/components/schemas/CategoryWithFindingNum'
-      minItems: 0
-      maxItems: 5
+    ValidationException: {}
     ThrottlingException: {}
-    NextToken:
-      type: string
-      pattern: ^[\S]+$
-      minLength: 1
-      maxLength: 2048
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -482,14 +482,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -500,8 +500,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

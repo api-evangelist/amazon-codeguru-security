@@ -464,22 +464,8 @@ paths:
       - Scans
 components:
   schemas:
-    AccessDeniedException: {}
-    ResourceId:
-      type: object
-      properties:
-        codeArtifactId:
-          allOf:
-          - $ref: '#/components/schemas/Uuid'
-          - description: The identifier for the code file uploaded to the resource where a finding was detected.
-      description: The identifier for a resource object that contains resources where a finding was detected.
     ConflictException: {}
-    ScanState:
-      type: string
-      enum:
-      - InProgress
-      - Successful
-      - Failed
+    InternalServerException: {}
     CreateScanResponse:
       type: object
       required:
@@ -508,22 +494,13 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScanState'
           - description: The current state of the scan. Returns either <code>InProgress</code>, <code>Successful</code>, or <code>Failed</code>.
-    AnalysisType:
-      type: string
-      enum:
-      - Security
-      - All
-    InternalServerException: {}
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    ScanName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 140
     ResourceNotFoundException: {}
+    Long:
+      type: integer
     ListScansResponse:
       type: object
       properties:
@@ -535,15 +512,22 @@ components:
           allOf:
           - $ref: '#/components/schemas/ScanSummaries'
           - description: A list of <code>ScanSummary</code> objects with information about all scans in an account.
-    Long:
-      type: integer
-    ValidationException: {}
-    Uuid:
+    NextToken:
       type: string
-      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
-    Timestamp:
+      pattern: ^[\S]+$
+      minLength: 1
+      maxLength: 2048
+    ScanName:
       type: string
-      format: date-time
+      pattern: ^[a-zA-Z0-9-_$:.]*$
+      minLength: 1
+      maxLength: 140
+    ScanNameArn:
+      type: string
+      pattern: ^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$
+      minLength: 1
+      maxLength: 300
+    AccessDeniedException: {}
     ScanSummary:
       type: object
       required:
@@ -577,11 +561,17 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The time the scan was last updated. A scan is updated when it is re-run.
       description: 'Information about a scan. '
-    ScanNameArn:
+    Uuid:
       type: string
-      pattern: ^arn:aws:codeguru-security:[\S]+:[\d]{12}:scans\/[a-zA-Z0-9-_$:.]*$
-      minLength: 1
-      maxLength: 300
+      pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+    Timestamp:
+      type: string
+      format: date-time
+    AnalysisType:
+      type: string
+      enum:
+      - Security
+      - All
     GetScanResponse:
       type: object
       required:
@@ -623,25 +613,41 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: The time when the scan was last updated. Only available for <code>STANDARD</code> scan types.
-    NextToken:
+    ScanState:
       type: string
-      pattern: ^[\S]+$
-      minLength: 1
-      maxLength: 2048
+      enum:
+      - InProgress
+      - Successful
+      - Failed
+    ResourceId:
+      type: object
+      properties:
+        codeArtifactId:
+          allOf:
+          - $ref: '#/components/schemas/Uuid'
+          - description: The identifier for the code file uploaded to the resource where a finding was detected.
+      description: The identifier for a resource object that contains resources where a finding was detected.
+    ValidationException: {}
     ThrottlingException: {}
     ScanSummaries:
       type: array
       items:
         $ref: '#/components/schemas/ScanSummary'
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -652,26 +658,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
