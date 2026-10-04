@@ -178,6 +178,9 @@ apis:
   - type: Packages
     url: packages/amazon-codeguru-security-packages.yml
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-codeguru-security-capability-edges.yml
+  name: Amazon CodeGuru Security Business Capability Map
 - type: Website
   url: https://amazon.com
 - type: Overlay

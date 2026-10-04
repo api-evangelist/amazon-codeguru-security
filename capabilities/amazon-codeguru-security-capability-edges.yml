@@ -1,0 +1,44 @@
+slug: amazon-codeguru-security
+provider: Amazon CodeGuru Security
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Findings
+  spec_file: amazon-codeguru-security-findings-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.8
+  evidence: 'GET /findings/{scanName} GetFindings ... schemas: Vulnerability, Severity, Remediation, SuggestedFix'
+  reason: Returns security vulnerabilities detected in code with suggested fixes — vulnerability scanning
+    and remediation, the core of vulnerability management.
+- tag: Scans
+  spec_file: amazon-codeguru-security-scans-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.8
+  evidence: 'POST /scans CreateScan ... schemas: ScanState, AnalysisType, ScanSummary'
+  reason: Initiates and tracks static application security testing scans of code — explicitly vulnerability
+    scanning per the vendor description of a SAST service.
+- tag: Batch Get Findings
+  spec_file: amazon-codeguru-security-batch-get-findings-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.78
+  evidence: 'POST /batchGetFindings BatchGetFindings ... schemas: Vulnerability, Severity, Remediation,
+    SuggestedFixes'
+  reason: Retrieves static-analysis security findings with severity and remediation guidance; this is
+    vulnerability identification and remediation tracking. Some ambiguity with software quality engineering,
+    but the schemas name Vulnerability and Remediation explicitly.
