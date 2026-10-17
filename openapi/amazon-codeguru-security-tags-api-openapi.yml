@@ -459,20 +459,10 @@ paths:
       - Tags
 components:
   schemas:
-    ConflictException: {}
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    UntagResourceResponse:
-      type: object
-      properties: {}
+    ThrottlingException: {}
     TagResourceResponse:
       type: object
       properties: {}
-    AccessDeniedException: {}
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -486,21 +476,31 @@ components:
       maxProperties: 200
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    ConflictException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ResourceNotFoundException: {}
     TagKey:
       type: string
       minLength: 1
       maxLength: 128
+    InternalServerException: {}
     ValidationException: {}
-    ThrottlingException: {}
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -511,8 +511,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -529,8 +529,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
