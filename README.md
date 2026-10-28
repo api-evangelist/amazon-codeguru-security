@@ -64,135 +64,218 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
 Amazon CodeGuru Security is a static application security testing (SAST) service that uses machine learning to detect security vulnerabilities in your code. It identifies vulnerabilities such as injection flaws, data exposure risks, and infrastructure-as-code misconfigurations, and provides actionable remediation guidance to help developers fix security issues quickly.
 
-**URL:** [Visit APIs.json](https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-security/refs/heads/main/apis.yml)
+**Areas:** Amazon · AWS · Security · SAST · Code Analysis · DevSecOps · Developer Tools · Defunct
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon CodeGuru Security on APIs.io (historical record)
 
-## Tags:
+Everything profiled for Amazon CodeGuru Security is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-codeguru-security/](https://apis.io/providers/amazon-codeguru-security/)** — or go straight to one of the APIs or properties below.
 
- - Amazon, AWS, Security, SAST, Code Analysis, DevSecOps, Developer Tools
+### APIs (8)
 
-## Timestamps
+- [Amazon CodeGuru Security Findings API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-findings-api/) — The Findings API from Amazon CodeGuru Security — 1 operation(s) for findings.
+- [Amazon CodeGuru Security Metrics API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-metrics-api/) — The Metrics API from Amazon CodeGuru Security — 2 operation(s) for metrics.
+- [Amazon CodeGuru Security Scans API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-scans-api/) — The Scans API from Amazon CodeGuru Security — 2 operation(s) for scans.
+- [Amazon CodeGuru Security Tags API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-tags-api/) — The Tags API from Amazon CodeGuru Security — 2 operation(s) for tags.
+- [Amazon CodeGuru Security Account Configuration API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-account-configuration-api/) — The Account Configuration API from Amazon CodeGuru Security — 1 operation(s) for account configuration.
+- [Amazon CodeGuru Security Batch Get Findings API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-api/) — The Batch Get Findings API from Amazon CodeGuru Security — 1 operation(s) for batch get findings.
+- [Amazon CodeGuru Security Update Account Configuration API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-update-account-configuration-api/) — The Update Account Configuration API from Amazon CodeGuru Security — 1 operation(s) for update account configuration.
+- [Amazon CodeGuru Security Upload URL API](https://apis.io/apis/amazon-codeguru-security/amazon-codeguru-security-upload-url-api/) — The Upload URL API from Amazon CodeGuru Security — 1 operation(s) for upload url.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon CodeGuru Security API
+#### MCP servers (1)
 
-The Amazon CodeGuru Security REST API.
+Model Context Protocol servers that expose the API to agents.
 
-**Human URL:** [https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html](https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html)
+- [amazon-codeguru-security](https://apis.io/servers/amazon-codeguru-security/amazon-codeguru-security/)
 
-#### Tags:
+#### Agentic access (1)
 
- - Amazon, AWS, Security, SAST, Code Analysis
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Amazon Codeguru Security Agentic Access](https://apis.io/agentic-access/amazon-codeguru-security/amazon-codeguru-security-agentic-access/)
 
+#### JSON Schema (85)
+
+The data models the API reads and writes.
+
+- [AccountFindingsMetric](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-account-findings-metric/)
+- [AnalysisType](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-analysis-type/)
+- [BatchGetFindingsError](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-error/)
+- [BatchGetFindingsErrors](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-errors/)
+- [BatchGetFindingsRequest](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-request/)
+- [BatchGetFindingsResponse](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-response/)
+- [CategoriesWithMostFindings](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-categories-with-most-findings/)
+- [CategoryWithFindingNum](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-category-with-finding-num/)
+- [ClientToken](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-client-token/)
+- [CodeLine](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-code-line/)
+- [CodeSnippet](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-code-snippet/)
+- [CreateScanRequest](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-create-scan-request/)
+- [CreateScanResponse](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-create-scan-response/)
+- [CreateUploadUrlRequest](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-create-upload-url-request/)
+- [CreateUploadUrlResponse](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-create-upload-url-response/)
+- [DetectorTags](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-detector-tags/)
+- [Double](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-double/)
+- [EncryptionConfig](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-encryption-config/)
+- [ErrorCode](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-error-code/)
+- [FilePath](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-file-path/)
+- [Finding](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-finding/)
+- [FindingIdentifier](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-finding-identifier/)
+- [FindingIdentifiers](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-finding-identifiers/)
+- [FindingMetricsValuePerSeverity](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-finding-metrics-value-per-severity/)
+- [Findings](https://apis.io/schemas/amazon-codeguru-security/amazon-codeguru-security-findings/)
+- …and 60 more published on APIs.io
+
+#### JSON Structure (85)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Codeguru Security Account Findings Metric Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-account-findings-metric-structure/)
+- [Amazon Codeguru Security Analysis Type Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-analysis-type-structure/)
+- [Amazon Codeguru Security Batch Get Findings Error Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-error-structure/)
+- [Amazon Codeguru Security Batch Get Findings Errors Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-errors-structure/)
+- [Amazon Codeguru Security Batch Get Findings Request Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-request-structure/)
+- [Amazon Codeguru Security Batch Get Findings Response Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-response-structure/)
+- [Amazon Codeguru Security Categories With Most Findings Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-categories-with-most-findings-structure/)
+- [Amazon Codeguru Security Category With Finding Num Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-category-with-finding-num-structure/)
+- [Amazon Codeguru Security Client Token Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-client-token-structure/)
+- [Amazon Codeguru Security Code Line Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-code-line-structure/)
+- [Amazon Codeguru Security Code Snippet Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-code-snippet-structure/)
+- [Amazon Codeguru Security Create Scan Request Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-create-scan-request-structure/)
+- [Amazon Codeguru Security Create Scan Response Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-create-scan-response-structure/)
+- [Amazon Codeguru Security Create Upload Url Request Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-create-upload-url-request-structure/)
+- [Amazon Codeguru Security Create Upload Url Response Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-create-upload-url-response-structure/)
+- [Amazon Codeguru Security Detector Tags Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-detector-tags-structure/)
+- [Amazon Codeguru Security Double Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-double-structure/)
+- [Amazon Codeguru Security Encryption Config Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-encryption-config-structure/)
+- [Amazon Codeguru Security Error Code Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-error-code-structure/)
+- [Amazon Codeguru Security File Path Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-file-path-structure/)
+- [Amazon Codeguru Security Finding Identifier Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-finding-identifier-structure/)
+- [Amazon Codeguru Security Finding Identifiers Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-finding-identifiers-structure/)
+- [Amazon Codeguru Security Finding Metrics Value Per Severity Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-finding-metrics-value-per-severity-structure/)
+- [Amazon Codeguru Security Finding Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-finding-structure/)
+- [Amazon Codeguru Security Findings Metric List Structure](https://apis.io/json-structure/amazon-codeguru-security/amazon-codeguru-security-findings-metric-list-structure/)
+- …and 60 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Codeguru Security Context](https://apis.io/jsonld/amazon-codeguru-security/amazon-codeguru-security-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Codeguru Security Vocabulary](https://apis.io/vocabularies/amazon-codeguru-security/amazon-codeguru-security-vocabulary/)
+
+#### Examples (46)
+
+Example requests and responses.
+
+- [Amazon Codeguru Security Account Findings Metric Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-account-findings-metric-example/)
+- [Amazon Codeguru Security Batch Get Findings Error Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-error-example/)
+- [Amazon Codeguru Security Batch Get Findings Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-request-example/)
+- [Amazon Codeguru Security Batch Get Findings Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-batch-get-findings-response-example/)
+- [Amazon Codeguru Security Category With Finding Num Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-category-with-finding-num-example/)
+- [Amazon Codeguru Security Code Line Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-code-line-example/)
+- [Amazon Codeguru Security Create Scan Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-create-scan-request-example/)
+- [Amazon Codeguru Security Create Scan Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-create-scan-response-example/)
+- [Amazon Codeguru Security Create Upload Url Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-create-upload-url-request-example/)
+- [Amazon Codeguru Security Create Upload Url Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-create-upload-url-response-example/)
+- [Amazon Codeguru Security Encryption Config Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-encryption-config-example/)
+- [Amazon Codeguru Security File Path Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-file-path-example/)
+- [Amazon Codeguru Security Finding Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-finding-example/)
+- [Amazon Codeguru Security Finding Identifier Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-finding-identifier-example/)
+- [Amazon Codeguru Security Finding Metrics Value Per Severity Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-finding-metrics-value-per-severity-example/)
+- [Amazon Codeguru Security Get Account Configuration Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-account-configuration-request-example/)
+- [Amazon Codeguru Security Get Account Configuration Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-account-configuration-response-example/)
+- [Amazon Codeguru Security Get Findings Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-findings-request-example/)
+- [Amazon Codeguru Security Get Findings Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-findings-response-example/)
+- [Amazon Codeguru Security Get Metrics Summary Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-metrics-summary-request-example/)
+- [Amazon Codeguru Security Get Metrics Summary Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-metrics-summary-response-example/)
+- [Amazon Codeguru Security Get Scan Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-scan-request-example/)
+- [Amazon Codeguru Security Get Scan Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-get-scan-response-example/)
+- [Amazon Codeguru Security List Findings Metrics Request Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-list-findings-metrics-request-example/)
+- [Amazon Codeguru Security List Findings Metrics Response Example](https://apis.io/examples/amazon-codeguru-security/amazon-codeguru-security-list-findings-metrics-response-example/)
+- …and 21 more published on APIs.io
+
+#### Collections (16)
+
+Postman and Open Collection request collections.
+
+- [Amazon CodeGuru Security AccountConfiguration API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-accountconfiguration-api/)
+- [Amazon CodeGuru Security AccountConfiguration BatchGetFindings API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-batchgetfindings-api/)
+- [Amazon CodeGuru Security AccountConfiguration Findings API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-findings-api/)
+- [Amazon CodeGuru Security AccountConfiguration Metrics API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-metrics-api/)
+- [Amazon CodeGuru Security AccountConfiguration Scans API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-scans-api/)
+- [Amazon CodeGuru Security AccountConfiguration Tags API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-tags-api/)
+- [Amazon CodeGuru Security AccountConfiguration UpdateAccountConfiguration API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-updateaccountconfiguration-api/)
+- [Amazon CodeGuru Security AccountConfiguration UploadUrl API](https://apis.io/collections/amazon-codeguru-security/open-amazon-codeguru-security-uploadurl-api/)
+- [Amazon CodeGuru Security AccountConfiguration API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-accountconfiguration-api/)
+- [Amazon CodeGuru Security AccountConfiguration BatchGetFindings API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-batchgetfindings-api/)
+- [Amazon CodeGuru Security AccountConfiguration Findings API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-findings-api/)
+- [Amazon CodeGuru Security AccountConfiguration Metrics API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-metrics-api/)
+- [Amazon CodeGuru Security AccountConfiguration Scans API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-scans-api/)
+- [Amazon CodeGuru Security AccountConfiguration Tags API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-tags-api/)
+- [Amazon CodeGuru Security AccountConfiguration UpdateAccountConfiguration API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-updateaccountconfiguration-api/)
+- [Amazon CodeGuru Security AccountConfiguration UploadUrl API](https://apis.io/collections/amazon-codeguru-security/postman-amazon-codeguru-security-uploadurl-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Amazon Codeguru Security Openapi Overlay](https://apis.io/overlays/amazon-codeguru-security/amazon-codeguru-security-openapi-overlay/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon CodeGuru Security — jsonschema rules](https://apis.io/rules/amazon-codeguru-security/amazon-codeguru-security-jsonschema-spectral-rules/)
+- [Amazon CodeGuru Security API Rules](https://apis.io/rules/amazon-codeguru-security/amazon-codeguru-security-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Codeguru Security Authentication](https://apis.io/security/amazon-codeguru-security/amazon-codeguru-security-authentication/)
+- [Amazon Codeguru Security Domain Security](https://apis.io/security/amazon-codeguru-security/amazon-codeguru-security-domain-security/)
+- [Amazon Codeguru Security Trust Center](https://apis.io/security/amazon-codeguru-security/amazon-codeguru-security-trust-center/)
+- [Amazon Codeguru Security Vulnerability Disclosure](https://apis.io/security/amazon-codeguru-security/amazon-codeguru-security-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://amazon.com)
 - [Documentation](https://docs.aws.amazon.com/codegurusecurity/)
-- [APIReference](https://docs.aws.amazon.com/codeguru/latest/security-api/Welcome.html)
-- [OpenAPI](openapi/amazon-codeguru-security-openapi-original.yaml)
-
-## Common Properties
-
-- [GettingStarted](https://docs.aws.amazon.com/codeguru/security)
+- [Getting started](https://docs.aws.amazon.com/codeguru/security)
 - [Pricing](https://aws.amazon.com/codegurusecurity/pricing/)
-- [Console](https://console.aws.amazon.com/codegurusecurity/)
-- [Portal](https://aws.amazon.com/codegurusecurity/)
-- [Documentation](https://docs.aws.amazon.com/codegurusecurity/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
+- [Sign up](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
 - [Blog](https://aws.amazon.com/blogs/devops/)
-- [SignUp](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
-- [GitHubOrganization](https://github.com/aws)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Static Application Security Testing | Analyze source code for security vulnerabilities without running the application using machine learning-powered SAST. |
-| Multi-Language Support | Detect security issues in Java, Python, JavaScript, TypeScript, C, C++, C#, Go, Ruby, and Kotlin code. |
-| Infrastructure-as-Code Scanning | Detect security misconfigurations in CloudFormation, Terraform, CDK, and other IaC templates. |
-| Severity Classification | Classify findings by severity (Critical, High, Medium, Low, Informational) to help prioritize remediation. |
-| Remediation Guidance | Provide detailed remediation recommendations including suggested code fixes for each identified vulnerability. |
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
 
-## Use Cases
+## How this profile is made
 
-| Name | Description |
-|------|-------------|
-| DevSecOps Integration | Integrate security scanning into CI/CD pipelines to detect vulnerabilities before code reaches production. |
-| Security Audit and Compliance | Run security scans on existing codebases to identify and remediate vulnerabilities for compliance audits. |
-| IaC Security Validation | Scan infrastructure-as-code templates for security misconfigurations before provisioning cloud resources. |
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-## Integrations
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon CodeGuru Security: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-| Name | Description |
-|------|-------------|
-| AWS CodeBuild | Run security scans as part of CodeBuild build projects for CI/CD integration. |
-| GitHub Actions | Add CodeGuru Security scanning to GitHub Actions workflows. |
-| AWS Security Hub | Send security findings to Security Hub for centralized security management. |
-| Amazon S3 | Store and retrieve code bundles for security scanning from S3. |
+## Open an issue
 
-## Artifacts
-
-Machine-readable API specifications organized by format.
-
-### OpenAPI
-
-- [amazon-codeguru-security-openapi-original](openapi/amazon-codeguru-security-openapi-original.yaml)
-
-### JSON Schema
-
-85 JSON Schema files generated from the OpenAPI specification.
-
-- [amazon-codeguru-security-account-findings-metric-schema](json-schema/amazon-codeguru-security-account-findings-metric-schema.json)
-- [amazon-codeguru-security-analysis-type-schema](json-schema/amazon-codeguru-security-analysis-type-schema.json)
-- [amazon-codeguru-security-batch-get-findings-error-schema](json-schema/amazon-codeguru-security-batch-get-findings-error-schema.json)
-- [amazon-codeguru-security-batch-get-findings-errors-schema](json-schema/amazon-codeguru-security-batch-get-findings-errors-schema.json)
-- [amazon-codeguru-security-batch-get-findings-request-schema](json-schema/amazon-codeguru-security-batch-get-findings-request-schema.json)
-- ...and 80 more in [json-schema/](json-schema/)
-
-### JSON Structure
-
-85 JSON Structure files in [json-structure/](json-structure/).
-
-### JSON-LD
-
-- [amazon-codeguru-security-context](json-ld/amazon-codeguru-security-context.jsonld)
-
-### Examples
-
-85 example JSON files in [examples/](examples/).
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [codegurusecurity](capabilities/shared/codegurusecurity.yaml) — 13 operations
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon CodeGuru Security Application Security Scanning](capabilities/amazon-codeguru-security-security-scanning.yaml) | codegurusecurity | 7 | DevOps Engineer |
-
-## Vocabulary
-
-- [amazon-codeguru-security-vocabulary](vocabulary/amazon-codeguru-security-vocabulary.yaml) — Unified taxonomy mapping 9 resources, 5 actions, 1 workflows, and 3 personas
-
-## Rules
-
-- [amazon-codeguru-security-spectral-rules](rules/amazon-codeguru-security-spectral-rules.yml) — 10 rules enforcing Amazon CodeGuru Security API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-codeguru-security/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
